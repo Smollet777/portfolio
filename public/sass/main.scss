@@ -9,10 +9,16 @@ $color5: rgba(70, 70, 236, 0.7);
 
 $mainWidth:90%;
 
-* {
+html {
   box-sizing: border-box;
-  margin: 0;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
   padding: 0;
+  margin: 0;
 }
 
 body {
@@ -30,6 +36,7 @@ body {
 a {
   text-decoration: none;
   display: inline;
+  color: $color5;
 }
 
 li {
@@ -40,18 +47,23 @@ li {
 
   height: 100vh;
   color: $color0;
-  padding: 15rem 0 0 0;
+  padding: 13rem 0 0 0;
 
-  .avatar {}
+  .avatar {
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  }
 
   h1 {
     font-size: 3rem;
-    margin: 1.5rem 0 1.5rem 0;
+    margin: 1.5rem 0 0.5rem 0;
   }
 
-  p {
-    &::before {
-      content: '';
+  #social {
+
+    p {
+      font-weight: bold;
+      line-height: 1.5rem;
+      letter-spacing: 2px;
     }
   }
 }

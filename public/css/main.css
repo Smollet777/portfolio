@@ -1,9 +1,15 @@
 @import url("https://fonts.googleapis.com/css?family=Raleway");
-* {
+html {
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  margin: 0;
-  padding: 0; }
+          box-sizing: border-box; }
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+  padding: 0;
+  margin: 0; }
 
 body {
   font-family: 'Raleway', sans-serif;
@@ -18,7 +24,8 @@ body {
 
 a {
   text-decoration: none;
-  display: inline; }
+  display: inline;
+  color: rgba(70, 70, 236, 0.7); }
 
 li {
   list-style: none; }
@@ -26,12 +33,17 @@ li {
 #welcome-section {
   height: 100vh;
   color: white;
-  padding: 15rem 0 0 0; }
+  padding: 13rem 0 0 0; }
+  #welcome-section .avatar {
+    -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%); }
   #welcome-section h1 {
     font-size: 3rem;
-    margin: 1.5rem 0 1.5rem 0; }
-  #welcome-section p::before {
-    content: ''; }
+    margin: 1.5rem 0 0.5rem 0; }
+  #welcome-section #social p {
+    font-weight: bold;
+    line-height: 1.5rem;
+    letter-spacing: 2px; }
 
 #navbar {
   width: 90%;
