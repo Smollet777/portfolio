@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+
+$color0: rgba(255, 255, 255, 1);
+$color1: rgba(142, 148, 242, 1);
+$color2: rgba(159, 160, 255, 1);
+$color3: rgba(187, 173, 255, 1);
+$color4: rgba(218, 182, 252, 1);
+$color5: rgba(70, 70, 236, 0.7);
+
+$mainWidth:90%;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Raleway', sans-serif;
+  background: $color1;
+  background: linear-gradient(to top, $color1, $color4);
+}
+
+.main {
+  text-align: center;
+  width: $mainWidth;
+  margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+  display: inline;
+}
+
+li {
+  list-style: none;
+}
+
+#welcome-section {
+
+  height: 100vh;
+  color: $color0;
+  padding: 15rem 0 0 0;
+
+  .avatar {}
+
+  h1 {
+    font-size: 3rem;
+    margin: 1.5rem 0 1.5rem 0;
+  }
+
+  p {
+    &::before {
+      content: '';
+    }
+  }
+}
+
+#navbar {
+  width: $mainWidth;
+  background-color: $color3;
+  padding: 1rem;
+
+  .active {}
+
+  ul {
+    li {
+      display: inline-block;
+      padding: 1rem 3rem;
+
+      a {}
+    }
+  }
+}
+
+#projects {
+  .project-tile {
+    a {}
+  }
+}
+
+.sticky {
+  position: fixed;
+}
+
+.button {
+  color: $color0;
+  border: 1px solid $color0;
+  padding: 0.6rem;
+  margin: 0.6rem;
+  transition: 0.7s ease-out;
+
+  &:hover {
+    color: $color5;
+    background-color: $color0;
+    border: 1px solid $color5;
+    transition: 0.2s ease-in;
+  }
+}
+
+@media screen and (max-device-width: 960px) {
+  html {
+    font-size: 30px;
+  }
+
+  .main {
+    width: 100%;
+  }
+
+  button {
+    margin: 1.5rem;
+    padding: 2rem;
+  }
+}
