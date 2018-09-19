@@ -20,7 +20,14 @@ body {
 .main {
   text-align: center;
   width: 90%;
-  margin: 0 auto; }
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap; }
 
 a {
   text-decoration: none;
@@ -33,7 +40,7 @@ li {
 #welcome-section {
   height: 100vh;
   color: white;
-  padding: 13rem 0 0 0; }
+  padding: 15% 0 0 0; }
   #welcome-section .avatar {
     -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
             clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%); }
@@ -41,8 +48,8 @@ li {
     font-size: 3rem;
     margin: 1.5rem 0 0.5rem 0; }
   #welcome-section #social {
-    -webkit-animation-delay: 3s;
-            animation-delay: 3s; }
+    -webkit-animation-delay: .6s;
+            animation-delay: .6s; }
     #welcome-section #social p {
       font-weight: bold;
       line-height: 1.5rem;
@@ -172,6 +179,25 @@ li {
           animation-duration: 1s;
   -webkit-animation-fill-mode: both;
           animation-fill-mode: both; }
+
+@-webkit-keyframes blink-caret {
+  0%,
+  100% {
+    border-color: transparent; }
+  50% {
+    border-color: white; } }
+
+@keyframes blink-caret {
+  0%,
+  100% {
+    border-color: transparent; }
+  50% {
+    border-color: white; } }
+
+.typing {
+  border-right: 0.2em solid white;
+  -webkit-animation: blink-caret 1s infinite;
+          animation: blink-caret 1s infinite; }
 
 @media screen and (max-device-width: 960px) {
   html {
