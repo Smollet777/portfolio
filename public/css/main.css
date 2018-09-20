@@ -63,6 +63,55 @@ li {
     display: inline-block;
     padding: 1rem 3rem; }
 
+#contacts {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  justify-items: center;
+  background-color: #8e94f2; }
+  #contacts p,
+  #contacts a {
+    color: rgba(70, 70, 236, 0.7);
+    margin: .5rem;
+    padding: .5em;
+    font-size: 1rem;
+    letter-spacing: 2px;
+    font-weight: bold; }
+    #contacts p i,
+    #contacts a i {
+      font-weight: normal;
+      font-size: 2rem;
+      margin-right: 2px; }
+  #contacts .contactMe {
+    grid-area: 2/2/3/3;
+    -ms-flex-item-align: center;
+        align-self: center;
+    font-size: 2em;
+    font-weight: bolder;
+    border-left: solid .2em;
+    border-right: solid .2em; }
+  #contacts .mail {
+    grid-area: 1 / 2 / 2 / 3; }
+  #contacts .skype {
+    grid-area: 3/2/4/3; }
+  #contacts a {
+    -webkit-transition: 0.7s ease-out;
+    transition: 0.7s ease-out;
+    -webkit-text-decoration-line: underline;
+            text-decoration-line: underline; }
+    #contacts a:nth-child(even) {
+      justify-self: end; }
+    #contacts a:nth-child(odd) {
+      justify-self: start; }
+    #contacts a:hover {
+      color: white;
+      background-color: rgba(70, 70, 236, 0.7);
+      border-radius: 2px;
+      -webkit-transition: 0.2s ease-in;
+      transition: 0.2s ease-in; }
+
 .sticky {
   position: fixed; }
 
@@ -132,53 +181,61 @@ li {
   0% {
     -webkit-transform: translate3d(-100%, 0, 0);
             transform: translate3d(-100%, 0, 0);
-    visibility: visible; }
+    visibility: hidden; }
   100% {
     -webkit-transform: translate3d(0, 0, 0);
-            transform: translate3d(0, 0, 0); } }
+            transform: translate3d(0, 0, 0);
+    visibility: visible; } }
 
 @keyframes slideInLeft {
   0% {
     -webkit-transform: translate3d(-100%, 0, 0);
             transform: translate3d(-100%, 0, 0);
-    visibility: visible; }
+    visibility: hidden; }
   100% {
     -webkit-transform: translate3d(0, 0, 0);
-            transform: translate3d(0, 0, 0); } }
-
-.slideInLeft {
-  -webkit-animation-name: slideInLeft;
-          animation-name: slideInLeft;
-  -webkit-animation-duration: 1s;
-          animation-duration: 1s;
-  -webkit-animation-fill-mode: both;
-          animation-fill-mode: both; }
+            transform: translate3d(0, 0, 0);
+    visibility: visible; } }
 
 @-webkit-keyframes slideInRight {
   0% {
     -webkit-transform: translate3d(100%, 0, 0);
             transform: translate3d(100%, 0, 0);
-    visibility: visible; }
+    visibility: hidden; }
   100% {
     -webkit-transform: translate3d(0, 0, 0);
-            transform: translate3d(0, 0, 0); } }
+            transform: translate3d(0, 0, 0);
+    visibility: visible; } }
 
 @keyframes slideInRight {
   0% {
     -webkit-transform: translate3d(100%, 0, 0);
             transform: translate3d(100%, 0, 0);
-    visibility: visible; }
+    visibility: hidden; }
   100% {
     -webkit-transform: translate3d(0, 0, 0);
-            transform: translate3d(0, 0, 0); } }
+            transform: translate3d(0, 0, 0);
+    visibility: visible; } }
 
-.slideInRight {
-  -webkit-animation-name: slideInRight;
-          animation-name: slideInRight;
-  -webkit-animation-duration: 1s;
-          animation-duration: 1s;
+.animatable {
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused; }
+
+.animated {
   -webkit-animation-fill-mode: both;
-          animation-fill-mode: both; }
+          animation-fill-mode: both;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s; }
+
+.slideInLeft, #contacts a:nth-child(even) {
+  visibility: hidden;
+  -webkit-animation-name: slideInLeft;
+          animation-name: slideInLeft; }
+
+.slideInRight, #contacts a:nth-child(odd) {
+  visibility: hidden;
+  -webkit-animation-name: slideInRight;
+          animation-name: slideInRight; }
 
 @-webkit-keyframes blink-caret {
   0%,

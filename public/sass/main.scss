@@ -88,6 +88,69 @@ li {
   }
 }
 
+#contacts {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  justify-items: center;
+  background-color: $color1;
+
+  p,
+  a {
+    color: $color5;
+    margin: .5rem;
+    padding: .5em;
+    font-size: 1rem;
+    letter-spacing: 2px;
+    font-weight: bold;
+
+    i {
+      font-weight: normal;
+      font-size: 2rem;
+      margin-right: 2px;
+    }
+  }
+
+  .contactMe {
+    grid-area: 2/2/3/3;
+    align-self: center;
+    font-size: 2em;
+    font-weight: bolder;
+    border-left: solid .2em;
+    border-right: solid .2em;
+  }
+
+  .mail {
+    grid-area: 1 / 2 / 2 / 3;
+  }
+
+  .skype {
+    grid-area: 3/2/4/3;
+  }
+
+  a {
+    transition: 0.7s ease-out;
+    text-decoration-line: underline;
+
+    &:nth-child(even) {
+      @extend .slideInLeft;
+      justify-self: end;
+    }
+
+    &:nth-child(odd) {
+      @extend .slideInRight;
+      justify-self: start;
+    }
+
+    &:hover {
+      color: $color0;
+      background-color: $color5;
+      border-radius: 2px;
+      transition: 0.2s ease-in;
+    }
+  }
+}
+
 #projects {
   .project-tile {
     a {}
@@ -151,36 +214,46 @@ li {
 @keyframes slideInLeft {
   0% {
     transform: translate3d(-100%, 0, 0);
-    visibility: visible;
+    visibility: hidden;
   }
 
   100% {
     transform: translate3d(0, 0, 0);
+    visibility: visible;
   }
-}
-
-.slideInLeft {
-  animation-name: slideInLeft;
-  animation-duration: 1s;
-  animation-fill-mode: both;
 }
 
 @keyframes slideInRight {
   0% {
     transform: translate3d(100%, 0, 0);
-    visibility: visible;
+    visibility: hidden;
   }
 
   100% {
     transform: translate3d(0, 0, 0);
+    visibility: visible;
   }
 }
 
-.slideInRight {
-  animation-name: slideInRight;
-  animation-duration: 1s;
-  animation-fill-mode: both;
+.animatable {
+  animation-play-state: paused;
 }
+
+.animated {
+  animation-fill-mode: both;
+  animation-duration: 1s;
+}
+
+.slideInLeft {
+  visibility: hidden;
+  animation-name: slideInLeft;
+}
+
+.slideInRight {
+  visibility: hidden;
+  animation-name: slideInRight;
+}
+
 
 @keyframes blink-caret {
 
