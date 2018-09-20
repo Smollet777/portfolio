@@ -75,6 +75,7 @@ li {
   width: $mainWidth;
   background-color: $color3;
   padding: 1rem;
+  z-index: 99;
 
   .active {}
 
