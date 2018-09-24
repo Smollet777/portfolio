@@ -113,6 +113,79 @@ li {
       -webkit-transition: 0.2s ease-in;
       transition: 0.2s ease-in; }
 
+#projects {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -ms-flex-line-pack: distribute;
+      align-content: space-around;
+  background-color: #dab6fc; }
+  #projects .project-tile {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-line-pack: justify;
+        align-content: space-between; }
+    #projects .project-tile:nth-child(even) {
+      background-color: #d3a7fb; }
+      #projects .project-tile:nth-child(even) :last-child {
+        -webkit-box-ordinal-group: 0;
+            -ms-flex-order: -1;
+                order: -1; }
+    #projects .project-tile .image {
+      margin: .5em;
+      overflow: hidden;
+      position: relative;
+      background-color: rgba(70, 70, 236, 0.7);
+      -webkit-transition: background-color .5s;
+      transition: background-color .5s; }
+      #projects .project-tile .image:hover img {
+        opacity: 1;
+        -webkit-transform: translate3d(0, 0, 0) scale(1.3);
+                transform: translate3d(0, 0, 0) scale(1.3); }
+      #projects .project-tile .image:hover .additional {
+        opacity: 1;
+        -webkit-transform: scale(1);
+                transform: scale(1); }
+      #projects .project-tile .image img {
+        opacity: .6;
+        -webkit-transform: translate3d(0, 0, 0) scale(1.1);
+                transform: translate3d(0, 0, 0) scale(1.1);
+        -webkit-transition: all .5s;
+        transition: all .5s; }
+      #projects .project-tile .image .additional {
+        position: absolute;
+        top: 50%;
+        left: 40%;
+        opacity: 0;
+        -webkit-transform: scale(1.3);
+                transform: scale(1.3);
+        -webkit-transition: all .5s;
+        transition: all .5s;
+        color: white; }
+    #projects .project-tile .info {
+      color: rgba(70, 70, 236, 0.7);
+      margin: 2em; }
+      #projects .project-tile .info h3 {
+        font-weight: bold;
+        font-size: 1.2rem;
+        text-transform: uppercase;
+        padding: .5em; }
+
 .sticky {
   position: fixed; }
 
