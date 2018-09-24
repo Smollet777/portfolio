@@ -28,7 +28,6 @@ body {
 
 .main {
   text-align: center;
-  width: 90%;
   margin: 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -36,7 +35,10 @@ body {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-flow: column wrap;
-          flex-flow: column wrap; }
+          flex-flow: column wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
 
 a {
   text-decoration: none;
@@ -66,6 +68,7 @@ li {
 
 #navbar {
   width: 90%;
+  left: 5%;
   background-color: #bbadff;
   padding: 1em;
   z-index: 99; }
@@ -74,6 +77,7 @@ li {
     padding: 1em 3em; }
 
 #contacts {
+  width: 100%;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   -webkit-box-align: center;
