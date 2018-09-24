@@ -101,7 +101,7 @@ li {
 
   p,
   a {
-    color: $color5;
+    color: $color0;
     margin: .5em;
     padding: .5em;
     font-size: 1rem;
@@ -133,8 +133,7 @@ li {
   }
 
   a {
-    transition: 0.7s ease-out;
-    text-decoration-line: underline;
+    @extend .button;
 
     &:nth-child(even) {
       @extend .slideInLeft;
@@ -146,12 +145,6 @@ li {
       justify-self: start;
     }
 
-    &:hover {
-      color: $color0;
-      background-color: $color5;
-      border-radius: 2px;
-      transition: 0.2s ease-in;
-    }
   }
 }
 

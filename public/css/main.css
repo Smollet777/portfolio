@@ -87,7 +87,7 @@ li {
   background-color: #8e94f2; }
   #contacts p,
   #contacts a {
-    color: rgba(70, 70, 236, 0.7);
+    color: white;
     margin: .5em;
     padding: .5em;
     font-size: 1rem;
@@ -110,21 +110,10 @@ li {
     grid-area: 1 / 2 / 2 / 3; }
   #contacts .skype {
     grid-area: 3/2/4/3; }
-  #contacts a {
-    -webkit-transition: 0.7s ease-out;
-    transition: 0.7s ease-out;
-    -webkit-text-decoration-line: underline;
-            text-decoration-line: underline; }
-    #contacts a:nth-child(even) {
-      justify-self: end; }
-    #contacts a:nth-child(odd) {
-      justify-self: start; }
-    #contacts a:hover {
-      color: white;
-      background-color: rgba(70, 70, 236, 0.7);
-      border-radius: 2px;
-      -webkit-transition: 0.2s ease-in;
-      transition: 0.2s ease-in; }
+  #contacts a:nth-child(even) {
+    justify-self: end; }
+  #contacts a:nth-child(odd) {
+    justify-self: start; }
 
 #projects {
   display: -webkit-box;
@@ -202,7 +191,7 @@ li {
 .sticky {
   position: fixed; }
 
-.button {
+.button, #contacts a {
   color: white;
   background-color: transparent;
   font-weight: bold;
@@ -211,7 +200,7 @@ li {
   margin: 0.6em;
   -webkit-transition: 0.7s ease-out;
   transition: 0.7s ease-out; }
-  .button:hover {
+  .button:hover, #contacts a:hover {
     color: rgba(70, 70, 236, 0.7);
     background-color: white;
     border: 1px solid rgba(70, 70, 236, 0.7);
