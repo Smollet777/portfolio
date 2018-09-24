@@ -58,7 +58,7 @@ li {
 
   h1 {
     font-size: 3rem;
-    margin: 1.5rem 0 0.5rem 0;
+    margin: 1.5em 0 0.5em 0;
   }
 
   #social {
@@ -75,7 +75,7 @@ li {
 #navbar {
   width: $mainWidth;
   background-color: $color3;
-  padding: 1rem;
+  padding: 1em;
   z-index: 99;
 
   .active {}
@@ -83,7 +83,7 @@ li {
   ul {
     li {
       display: inline-block;
-      padding: 1rem 3rem;
+      padding: 1em 3em;
 
       a {}
     }
@@ -100,7 +100,7 @@ li {
   p,
   a {
     color: $color5;
-    margin: .5rem;
+    margin: .5em;
     padding: .5em;
     font-size: 1rem;
     letter-spacing: 2px;
@@ -235,9 +235,11 @@ li {
 
 .button {
   color: $color0;
+  background-color: transparent;
+  font-weight: bold;
   border: 1px solid $color0;
-  padding: 0.6rem;
-  margin: 0.6rem;
+  padding: 0.6em;
+  margin: 0.6em;
   transition: 0.7s ease-out;
 
   &:hover {

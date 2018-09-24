@@ -55,7 +55,7 @@ li {
             clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%); }
   #welcome-section h1 {
     font-size: 3rem;
-    margin: 1.5rem 0 0.5rem 0; }
+    margin: 1.5em 0 0.5em 0; }
   #welcome-section #social {
     -webkit-animation-delay: .6s;
             animation-delay: .6s; }
@@ -67,11 +67,11 @@ li {
 #navbar {
   width: 90%;
   background-color: #bbadff;
-  padding: 1rem;
+  padding: 1em;
   z-index: 99; }
   #navbar ul li {
     display: inline-block;
-    padding: 1rem 3rem; }
+    padding: 1em 3em; }
 
 #contacts {
   display: grid;
@@ -84,7 +84,7 @@ li {
   #contacts p,
   #contacts a {
     color: rgba(70, 70, 236, 0.7);
-    margin: .5rem;
+    margin: .5em;
     padding: .5em;
     font-size: 1rem;
     letter-spacing: 2px;
@@ -200,9 +200,11 @@ li {
 
 .button {
   color: white;
+  background-color: transparent;
+  font-weight: bold;
   border: 1px solid white;
-  padding: 0.6rem;
-  margin: 0.6rem;
+  padding: 0.6em;
+  margin: 0.6em;
   -webkit-transition: 0.7s ease-out;
   transition: 0.7s ease-out; }
   .button:hover {
@@ -338,4 +340,3 @@ li {
   border-right: 0.2em solid white;
   -webkit-animation: blink-caret 1s infinite;
           animation: blink-caret 1s infinite; }
-
