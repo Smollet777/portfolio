@@ -1,4 +1,13 @@
 @import url("https://fonts.googleapis.com/css?family=Raleway");
+@media screen and (max-device-width: 960px) {
+  html {
+    font-size: 30px; }
+  .main {
+    width: 100%; }
+  button {
+    margin: 1.5rem;
+    padding: 2rem; } }
+
 html {
   -webkit-box-sizing: border-box;
           box-sizing: border-box; }
@@ -330,11 +339,3 @@ li {
   -webkit-animation: blink-caret 1s infinite;
           animation: blink-caret 1s infinite; }
 
-@media screen and (max-device-width: 960px) {
-  html {
-    font-size: 30px; }
-  .main {
-    width: 100%; }
-  button {
-    margin: 1.5rem;
-    padding: 2rem; } }
