@@ -1,12 +1,62 @@
 @import url("https://fonts.googleapis.com/css?family=Raleway");
-@media screen and (max-device-width: 960px) {
-  html {
-    font-size: 30px; }
-  .main {
-    width: 100%; }
-  button {
-    margin: 1.5rem;
-    padding: 2rem; } }
+@media (min-width: 768px) {
+  #welcome-section h1 {
+    font-size: 3rem !important; }
+  #navbar {
+    padding: 1em; }
+    #navbar ul li {
+      display: inline-block;
+      padding: 1em 3em; }
+  #contacts {
+    grid-template-columns: repeat(3, 1fr) !important; }
+    #contacts .contactMe {
+      grid-area: 2/2/3/3;
+      font-size: 2em !important;
+      width: auto !important; }
+    #contacts .mail {
+      grid-area: 1 / 2 / 2 / 3; }
+    #contacts .skype {
+      grid-area: 3/2/4/3; }
+    #contacts a:nth-child(even) {
+      visibility: hidden;
+      -webkit-animation-name: slideInLeft;
+              animation-name: slideInLeft;
+      justify-self: end; }
+    #contacts a:nth-child(odd) {
+      visibility: hidden;
+      -webkit-animation-name: slideInRight;
+              animation-name: slideInRight;
+      justify-self: start; }
+  #projects .project-tile:nth-child(even) :last-child {
+    -webkit-box-ordinal-group: 0;
+        -ms-flex-order: -1;
+            order: -1; }
+  #projects .project-tile .image {
+    -webkit-transition: background-color .5s;
+    transition: background-color .5s; }
+    #projects .project-tile .image:hover img {
+      opacity: 1;
+      -webkit-transform: translate3d(0, 0, 0) scale(1.3);
+              transform: translate3d(0, 0, 0) scale(1.3); }
+    #projects .project-tile .image:hover .additional {
+      opacity: 1;
+      -webkit-transform: scale(1);
+              transform: scale(1); }
+    #projects .project-tile .image img {
+      opacity: .6;
+      -webkit-transform: translate3d(0, 0, 0) scale(1.1);
+              transform: translate3d(0, 0, 0) scale(1.1);
+      -webkit-transition: all .5s;
+      transition: all .5s; }
+    #projects .project-tile .image img {
+      opacity: .6;
+      -webkit-transform: translate3d(0, 0, 0) scale(1.1);
+              transform: translate3d(0, 0, 0) scale(1.1); }
+    #projects .project-tile .image .additional {
+      -webkit-transition: all .5s;
+      transition: all .5s; }
+  #footer {
+    padding: 1rem !important; } }
 
 html {
   -webkit-box-sizing: border-box;
@@ -56,7 +106,7 @@ li {
     -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
             clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%); }
   #welcome-section h1 {
-    font-size: 3rem;
+    font-size: 1.5rem;
     margin: 1.5em 0 0.5em 0; }
   #welcome-section #social {
     -webkit-animation-delay: .6s;
@@ -67,6 +117,7 @@ li {
       letter-spacing: 2px; }
 
 #navbar {
+  visibility: hidden;
   width: 90%;
   left: 5%;
   background-color: #bbadff;
@@ -79,7 +130,7 @@ li {
 #contacts {
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 1fr;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -99,21 +150,11 @@ li {
       font-size: 2rem;
       margin-right: 2px; }
   #contacts .contactMe {
-    grid-area: 2/2/3/3;
-    -ms-flex-item-align: center;
-        align-self: center;
-    font-size: 2em;
-    font-weight: bolder;
+    font-size: 1em;
+    width: 90%;
+    font-weight: bold;
     border-left: solid .2em;
     border-right: solid .2em; }
-  #contacts .mail {
-    grid-area: 1 / 2 / 2 / 3; }
-  #contacts .skype {
-    grid-area: 3/2/4/3; }
-  #contacts a:nth-child(even) {
-    justify-self: end; }
-  #contacts a:nth-child(odd) {
-    justify-self: start; }
 
 #projects {
   display: -webkit-box;
@@ -144,31 +185,14 @@ li {
         align-content: space-between; }
     #projects .project-tile:nth-child(even) {
       background-color: #d3a7fb; }
-      #projects .project-tile:nth-child(even) :last-child {
-        -webkit-box-ordinal-group: 0;
-            -ms-flex-order: -1;
-                order: -1; }
     #projects .project-tile .image {
       margin: .5em;
       overflow: hidden;
       position: relative;
-      background-color: rgba(70, 70, 236, 0.7);
-      -webkit-transition: background-color .5s;
-      transition: background-color .5s; }
-      #projects .project-tile .image:hover img {
-        opacity: 1;
-        -webkit-transform: translate3d(0, 0, 0) scale(1.3);
-                transform: translate3d(0, 0, 0) scale(1.3); }
-      #projects .project-tile .image:hover .additional {
-        opacity: 1;
-        -webkit-transform: scale(1);
-                transform: scale(1); }
+      background-color: rgba(70, 70, 236, 0.7); }
       #projects .project-tile .image img {
-        opacity: .6;
         -webkit-transform: translate3d(0, 0, 0) scale(1.1);
-                transform: translate3d(0, 0, 0) scale(1.1);
-        -webkit-transition: all .5s;
-        transition: all .5s; }
+                transform: translate3d(0, 0, 0) scale(1.1); }
       #projects .project-tile .image .additional {
         position: absolute;
         top: 50%;
@@ -176,8 +200,6 @@ li {
         opacity: 0;
         -webkit-transform: scale(1.3);
                 transform: scale(1.3);
-        -webkit-transition: all .5s;
-        transition: all .5s;
         color: white; }
     #projects .project-tile .info {
       color: rgba(70, 70, 236, 0.7);
@@ -190,7 +212,7 @@ li {
 
 #footer {
   width: 100%;
-  padding: 1rem;
+  padding: 0;
   background-color: rgba(70, 70, 236, 0.7);
   color: white; }
 
@@ -310,16 +332,6 @@ li {
           animation-fill-mode: both;
   -webkit-animation-duration: 1s;
           animation-duration: 1s; }
-
-.slideInLeft, #contacts a:nth-child(even) {
-  visibility: hidden;
-  -webkit-animation-name: slideInLeft;
-          animation-name: slideInLeft; }
-
-.slideInRight, #contacts a:nth-child(odd) {
-  visibility: hidden;
-  -webkit-animation-name: slideInRight;
-          animation-name: slideInRight; }
 
 @-webkit-keyframes blink-caret {
   0%,

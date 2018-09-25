@@ -1,14 +1,137 @@
-@media screen and (max-device-width: 960px) {
-  html {
-    font-size: 30px;
+// Extra small devices (portrait phones, less than 576px)
+// No media query for `xs` since this is the default in Bootstrap
+
+// Small devices (landscape phones, 576px and up)
+@media (max-width: 576px) {}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  #welcome-section {
+
+    .avatar {}
+
+    h1 {
+      font-size: 3rem !important;
+    }
+
+    #social {
+      p {}
+    }
   }
 
-  .main {
-    width: 100%;
+  #navbar {
+    padding: 1em;
+
+    .active {}
+
+    ul {
+      li {
+        display: inline-block;
+        padding: 1em 3em;
+
+        a {}
+      }
+    }
   }
 
-  button {
-    margin: 1.5rem;
-    padding: 2rem;
+  #contacts {
+    grid-template-columns: repeat(3, 1fr) !important;
+
+    p,
+    a {
+      i {}
+    }
+
+    .contactMe {
+      grid-area: 2/2/3/3;
+      font-size: 2em !important;
+      width: auto !important;
+    }
+
+    .mail {
+      grid-area: 1 / 2 / 2 / 3;
+    }
+
+    .skype {
+      grid-area: 3/2/4/3;
+    }
+
+    a {
+      &:nth-child(even) {
+        visibility: hidden;
+        animation-name: slideInLeft;
+        justify-self: end;
+      }
+
+      &:nth-child(odd) {
+        visibility: hidden;
+        animation-name: slideInRight;
+        justify-self: start;
+      }
+
+    }
+  }
+
+  #projects {
+
+    .project-tile {
+
+      &:nth-child(even) {
+
+        :last-child {
+          order: -1;
+        }
+      }
+
+      .image {
+        transition: background-color .5s;
+
+        &:hover img {
+          opacity: 1;
+          transform: translate3d(0, 0, 0) scale(1.3);
+        }
+
+        &:hover .additional {
+          opacity: 1;
+          transform: scale(1);
+        }
+
+        img {
+          opacity: .6;
+          transform: translate3d(0, 0, 0) scale(1.1);
+          transition: all .5s;
+        }
+
+        img {
+          opacity: .6;
+          transform: translate3d(0, 0, 0) scale(1.1);
+        }
+
+        .additional {
+          transition: all .5s;
+
+          a {}
+        }
+      }
+
+      .info {
+
+        h3 {}
+
+        p {}
+      }
+
+    }
+
+  }
+
+  #footer {
+    padding: 1rem !important;
   }
 }
+
+// Large devices (desktops, 992px and up)
+@media (max-width: 992px) {}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (max-width: 1200px) {}
