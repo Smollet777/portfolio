@@ -1,5 +1,4 @@
-// Extra small devices (portrait phones, less than 576px)
-// No media query for `xs` since this is the default in Bootstrap
+$mainWidth:90%;
 
 // Small devices (landscape phones, 576px and up)
 @media (max-width: 576px) {}
@@ -7,6 +6,7 @@
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
   #welcome-section {
+    padding: 12% 0 0 0 !important;
 
     .avatar {}
 
@@ -20,16 +20,19 @@
   }
 
   #navbar {
-    padding: 1em;
+    width: $mainWidth !important;
+    left: (100-$mainWidth)/2 !important;
 
     .active {}
 
     ul {
       li {
-        display: inline-block;
-        padding: 1em 3em;
+        padding: 1em 3em !important;
 
-        a {}
+        a {
+          padding: 0.6em !important;
+          margin: 0.6em !important;
+        }
       }
     }
   }

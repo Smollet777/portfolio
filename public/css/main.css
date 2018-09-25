@@ -1,12 +1,17 @@
 @import url("https://fonts.googleapis.com/css?family=Raleway");
 @media (min-width: 768px) {
-  #welcome-section h1 {
-    font-size: 3rem !important; }
+  #welcome-section {
+    padding: 12% 0 0 0 !important; }
+    #welcome-section h1 {
+      font-size: 3rem !important; }
   #navbar {
-    padding: 1em; }
+    width: 90% !important;
+    left: 5% !important; }
     #navbar ul li {
-      display: inline-block;
-      padding: 1em 3em; }
+      padding: 1em 3em !important; }
+      #navbar ul li a {
+        padding: 0.6em !important;
+        margin: 0.6em !important; }
   #contacts {
     grid-template-columns: repeat(3, 1fr) !important; }
     #contacts .contactMe {
@@ -101,7 +106,7 @@ li {
 #welcome-section {
   height: 100vh;
   color: white;
-  padding: 15% 0 0 0; }
+  padding: 20% 0 0 0; }
   #welcome-section .avatar {
     -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
             clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%); }
@@ -117,15 +122,18 @@ li {
       letter-spacing: 2px; }
 
 #navbar {
-  visibility: hidden;
-  width: 90%;
-  left: 5%;
+  width: 100%;
+  height: 3.2rem;
   background-color: #bbadff;
   padding: 1em;
   z-index: 99; }
   #navbar ul li {
-    display: inline-block;
-    padding: 1em 3em; }
+    display: inline;
+    padding: .5em; }
+    #navbar ul li a {
+      font-weight: bolder;
+      padding: 0.2em;
+      margin: 0.2em; }
 
 #contacts {
   width: 100%;
@@ -151,7 +159,6 @@ li {
       margin-right: 2px; }
   #contacts .contactMe {
     font-size: 1em;
-    width: 90%;
     font-weight: bold;
     border-left: solid .2em;
     border-right: solid .2em; }
@@ -234,6 +241,9 @@ li {
     border: 1px solid rgba(70, 70, 236, 0.7);
     -webkit-transition: 0.2s ease-in;
     transition: 0.2s ease-in; }
+
+section {
+  padding-top: 3.2rem; }
 
 @-webkit-keyframes fadeIn {
   0% {

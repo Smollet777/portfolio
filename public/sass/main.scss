@@ -8,7 +8,7 @@ $color3: rgba(187, 173, 255, 1);
 $color4: rgba(218, 182, 252, 1);
 $color5: rgba(70, 70, 236, 0.7);
 
-$mainWidth:90%;
+$navbarHeight:3.2rem;
 
 html {
   box-sizing: border-box;
@@ -50,7 +50,7 @@ li {
 
   height: 100vh;
   color: $color0;
-  padding: 15% 0 0 0;
+  padding: 20% 0 0 0;
 
   .avatar {
     clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
@@ -73,9 +73,8 @@ li {
 }
 
 #navbar {
-  visibility: hidden;
-  width: $mainWidth;
-  left: (100-$mainWidth)/2;
+  width: 100%;
+  height: $navbarHeight;
   background-color: $color3;
   padding: 1em;
   z-index: 99;
@@ -84,10 +83,14 @@ li {
 
   ul {
     li {
-      display: inline-block;
-      padding: 1em 3em;
+      display: inline;
+      padding: .5em;
 
-      a {}
+      a {
+        font-weight: bolder;
+        padding: 0.2em;
+        margin: 0.2em;
+      }
     }
   }
 }
@@ -118,7 +121,6 @@ li {
 
   .contactMe {
     font-size: 1em;
-    width: $mainWidth;
     font-weight: bold;
     border-left: solid .2em;
     border-right: solid .2em;
@@ -216,6 +218,10 @@ li {
     border: 1px solid $color5;
     transition: 0.2s ease-in;
   }
+}
+
+section {
+  padding-top: $navbarHeight;
 }
 
 
