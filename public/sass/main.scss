@@ -78,7 +78,9 @@ li {
   padding: 1em;
   z-index: 99;
 
-  .active {}
+  .active {
+    @extend .button:hover;
+  }
 
   ul {
     li {
@@ -305,8 +307,6 @@ section {
 
 .typing {
   border-right: .2em solid $color0;
-  animation: blink-caret 1s infinite;
-} border-right: .2em solid $color0;
   animation: blink-caret 1s infinite;
 }
 
