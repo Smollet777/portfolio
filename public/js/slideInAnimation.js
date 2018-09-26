@@ -11,5 +11,3 @@ let doAnimations = function () {
   });
 
 };
-
-document.addEventListener('scroll', doAnimations);

@@ -17,5 +17,3 @@ let applyStyleOnNavLink = function () {
     }
   })
 }
-
-window.addEventListener("scroll", applyStyleOnNavLink);

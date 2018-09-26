@@ -10,4 +10,3 @@ function frameLooper() {
   loopTimer = setTimeout('frameLooper()', 50);
 
 }
-setTimeout('frameLooper()', 1000);
