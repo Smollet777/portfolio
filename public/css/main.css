@@ -1,68 +1,4 @@
 @import url("https://fonts.googleapis.com/css?family=Raleway");
-@media (min-width: 768px) {
-  #welcome-section {
-    padding: 12% 0 0 0 !important; }
-    #welcome-section h1 {
-      font-size: 3rem !important; }
-  #navbar {
-    width: 90% !important;
-    left: 5% !important; }
-    #navbar ul li {
-      padding: 1em 3em !important; }
-      #navbar ul li a {
-        padding: 0.6em !important;
-        margin: 0.6em !important; }
-  #contacts {
-    grid-template-columns: repeat(3, 1fr) !important; }
-    #contacts .contactMe {
-      grid-area: 2/2/3/3;
-      font-size: 2em !important;
-      width: auto !important; }
-    #contacts .mail {
-      grid-area: 1 / 2 / 2 / 3; }
-    #contacts .skype {
-      grid-area: 3/2/4/3; }
-    #contacts a:nth-child(even) {
-      visibility: hidden;
-      -webkit-animation-name: slideInLeft;
-              animation-name: slideInLeft;
-      justify-self: end; }
-    #contacts a:nth-child(odd) {
-      visibility: hidden;
-      -webkit-animation-name: slideInRight;
-              animation-name: slideInRight;
-      justify-self: start; }
-  #projects .project-tile:nth-child(even) :last-child {
-    -webkit-box-ordinal-group: 0;
-        -ms-flex-order: -1;
-            order: -1; }
-  #projects .project-tile .image {
-    -webkit-transition: background-color .5s;
-    transition: background-color .5s; }
-    #projects .project-tile .image:hover img {
-      opacity: 1;
-      -webkit-transform: translate3d(0, 0, 0) scale(1.3);
-              transform: translate3d(0, 0, 0) scale(1.3); }
-    #projects .project-tile .image:hover .additional {
-      opacity: 1;
-      -webkit-transform: scale(1);
-              transform: scale(1); }
-    #projects .project-tile .image img {
-      opacity: .6;
-      -webkit-transform: translate3d(0, 0, 0) scale(1.1);
-              transform: translate3d(0, 0, 0) scale(1.1);
-      -webkit-transition: all .5s;
-      transition: all .5s; }
-    #projects .project-tile .image img {
-      opacity: .6;
-      -webkit-transform: translate3d(0, 0, 0) scale(1.1);
-              transform: translate3d(0, 0, 0) scale(1.1); }
-    #projects .project-tile .image .additional {
-      -webkit-transition: all .5s;
-      transition: all .5s; }
-  #footer {
-    padding: 1rem !important; } }
-
 html {
   -webkit-box-sizing: border-box;
           box-sizing: border-box; }
@@ -361,3 +297,67 @@ section {
   border-right: 0.2em solid white;
   -webkit-animation: blink-caret 1s infinite;
           animation: blink-caret 1s infinite; }
+
+@media (min-width: 768px) {
+  #welcome-section {
+    padding: 12% 0 0 0; }
+    #welcome-section h1 {
+      font-size: 3rem; }
+  #navbar {
+    width: 90%;
+    left: 5%; }
+    #navbar ul li {
+      padding: 1em 3em; }
+      #navbar ul li a {
+        padding: 0.6em;
+        margin: 0.6em; }
+  #contacts {
+    grid-template-columns: repeat(3, 1fr); }
+    #contacts .contactMe {
+      grid-area: 2/2/3/3;
+      font-size: 2em;
+      width: auto; }
+    #contacts .mail {
+      grid-area: 1 / 2 / 2 / 3; }
+    #contacts .skype {
+      grid-area: 3/2/4/3; }
+    #contacts a:nth-child(even) {
+      visibility: hidden;
+      -webkit-animation-name: slideInLeft;
+              animation-name: slideInLeft;
+      justify-self: end; }
+    #contacts a:nth-child(odd) {
+      visibility: hidden;
+      -webkit-animation-name: slideInRight;
+              animation-name: slideInRight;
+      justify-self: start; }
+  #projects .project-tile:nth-child(even) :last-child {
+    -webkit-box-ordinal-group: 0;
+        -ms-flex-order: -1;
+            order: -1; }
+  #projects .project-tile .image {
+    -webkit-transition: background-color .5s;
+    transition: background-color .5s; }
+    #projects .project-tile .image:hover img {
+      opacity: 1;
+      -webkit-transform: translate3d(0, 0, 0) scale(1.3);
+              transform: translate3d(0, 0, 0) scale(1.3); }
+    #projects .project-tile .image:hover .additional {
+      opacity: 1;
+      -webkit-transform: scale(1);
+              transform: scale(1); }
+    #projects .project-tile .image img {
+      opacity: .6;
+      -webkit-transform: translate3d(0, 0, 0) scale(1.1);
+              transform: translate3d(0, 0, 0) scale(1.1);
+      -webkit-transition: all .5s;
+      transition: all .5s; }
+    #projects .project-tile .image img {
+      opacity: .6;
+      -webkit-transform: translate3d(0, 0, 0) scale(1.1);
+              transform: translate3d(0, 0, 0) scale(1.1); }
+    #projects .project-tile .image .additional {
+      -webkit-transition: all .5s;
+      transition: all .5s; }
+  #footer {
+    padding: 1rem; } }

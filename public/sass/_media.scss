@@ -6,12 +6,12 @@ $mainWidth:90%;
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
   #welcome-section {
-    padding: 12% 0 0 0 !important;
+    padding: 12% 0 0 0;
 
     .avatar {}
 
     h1 {
-      font-size: 3rem !important;
+      font-size: 3rem;
     }
 
     #social {
@@ -20,25 +20,25 @@ $mainWidth:90%;
   }
 
   #navbar {
-    width: $mainWidth !important;
-    left: (100-$mainWidth)/2 !important;
+    width: $mainWidth;
+    left: (100-$mainWidth)/2;
 
     .active {}
 
     ul {
       li {
-        padding: 1em 3em !important;
+        padding: 1em 3em;
 
         a {
-          padding: 0.6em !important;
-          margin: 0.6em !important;
+          padding: 0.6em;
+          margin: 0.6em;
         }
       }
     }
   }
 
   #contacts {
-    grid-template-columns: repeat(3, 1fr) !important;
+    grid-template-columns: repeat(3, 1fr);
 
     p,
     a {
@@ -47,8 +47,8 @@ $mainWidth:90%;
 
     .contactMe {
       grid-area: 2/2/3/3;
-      font-size: 2em !important;
-      width: auto !important;
+      font-size: 2em;
+      width: auto;
     }
 
     .mail {
@@ -129,7 +129,7 @@ $mainWidth:90%;
   }
 
   #footer {
-    padding: 1rem !important;
+    padding: 1rem;
   }
 }
 

@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway');
-@import './media';
 
 $color0: rgba(255, 255, 255, 1);
 $color1: rgba(142, 148, 242, 1);
@@ -307,4 +306,8 @@ section {
 .typing {
   border-right: .2em solid $color0;
   animation: blink-caret 1s infinite;
+} border-right: .2em solid $color0;
+  animation: blink-caret 1s infinite;
 }
+
+@import './media';
