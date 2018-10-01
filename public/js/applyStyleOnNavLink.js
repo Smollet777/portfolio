@@ -1,3 +1,17 @@
+let smoothScrolling = function (links) {
+  links.forEach(link => {
+    let section = document.querySelector(link.hash);
+    link.addEventListener('click', e => {
+      e.preventDefault();
+
+      window.scroll({
+        top: section.offsetTop,
+        behavior: 'smooth'
+      })
+    })
+  })
+}
+
 //source https://codepen.io/chriscoyier/pen/qyELzd
 let applyStyleOnNavLink = function (links) {
   let fromTop = window.scrollY;
