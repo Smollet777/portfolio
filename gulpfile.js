@@ -30,12 +30,12 @@ gulp.task('browser-sync', () =>
 
 gulp.task('watch', ['browser-sync', 'sass'], () => {
   gulp.watch(['public/sass/**/*.+(sass|scss)'], ['sass']);
-  gulp.watch(['*.html', 'public/javascripts/**/*.js']).on('change', browserSync.reload);
+  gulp.watch(['*.html', 'public/js/**/*.js']).on('change', browserSync.reload);
 });
 
 gulp.task('scripts', (cb) => {
   pump([
-      gulp.src('public/javascripts/*.js'),
+      gulp.src('public/js/*.js'),
       concat('all.min.js'),
       babel({
         presets: ['env']
@@ -47,7 +47,7 @@ gulp.task('scripts', (cb) => {
   );
 });
 
-gulp.task('del', () => del.sync(['public/dist/**/*']));
+gulp.task('del', () => del.sync(['public/dist']));
 
 gulp.task('build', ['del', 'scripts'], (cb) => {
   pump([
