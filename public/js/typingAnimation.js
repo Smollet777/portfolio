@@ -1,12 +1,12 @@
-let text = document.querySelector(".typing").innerHTML.split('');
-document.querySelector('.typing').innerHTML = '';
+let query = document.querySelector(".typing")
+let text = query.innerHTML.split('');
+query.innerHTML = '';
 
 function frameLooper() {
   if (text.length) {
-    document.querySelector(".typing").innerHTML += text.shift();
+    query.innerHTML += text.shift();
   } else {
     clearTimeout(0);
   }
-  loopTimer = setTimeout('frameLooper()', 50);
-
+  setTimeout('frameLooper()', 50);
 }

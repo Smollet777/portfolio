@@ -1,10 +1,8 @@
 //source https://codepen.io/chriscoyier/pen/qyELzd
-let mainNavLinks = document.querySelectorAll("#navbar ul li a");
-
-let applyStyleOnNavLink = function () {
+let applyStyleOnNavLink = function (links) {
   let fromTop = window.scrollY;
 
-  mainNavLinks.forEach(link => {
+  links.forEach(link => {
     let section = document.querySelector(link.hash);
 
     if (
