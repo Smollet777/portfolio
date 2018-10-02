@@ -57,19 +57,32 @@ li {
       line-height: 1.5rem;
       letter-spacing: 2px; }
 
+#navbar.hidden {
+  left: 50%;
+  height: 3.2rem;
+  -webkit-transition: all .5s;
+  transition: all .5s; }
+  #navbar.hidden #menu {
+    left: -33.33333%; }
+  #navbar.hidden li {
+    display: none; }
+
 #navbar {
   width: 100%;
-  height: 3.2rem;
+  left: 0;
   background-color: #bbadff;
   padding: 1em;
-  z-index: 99; }
+  z-index: 99;
+  -webkit-transition: all .5s;
+  transition: all .5s; }
+  #navbar #menu {
+    font-weight: bolder;
+    position: relative;
+    left: 33.33333%; }
   #navbar ul li {
-    display: inline;
-    padding: .5em; }
-    #navbar ul li a {
-      font-weight: bolder;
-      padding: 0.2em;
-      margin: 0.2em; }
+    font-weight: bolder;
+    padding: 1em;
+    margin: 2em; }
 
 #contacts {
   width: 100%;
@@ -303,11 +316,19 @@ section {
     padding: 12% 0 0 0; }
     #welcome-section h1 {
       font-size: 3rem; }
+  #navbar.hidden {
+    left: 0; }
+    #navbar.hidden #menu {
+      display: none; }
+    #navbar.hidden li {
+      display: inline; }
   #navbar {
-    width: 90%;
-    left: 5%; }
+    left: 0; }
+    #navbar #menu {
+      display: none; }
     #navbar ul li {
-      padding: 1em 3em; }
+      padding: 1em 3em;
+      display: inline; }
       #navbar ul li a {
         padding: 0.6em;
         margin: 0.6em; }

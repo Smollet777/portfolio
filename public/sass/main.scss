@@ -8,6 +8,7 @@ $color4: rgba(218, 182, 252, 1);
 $color5: rgba(70, 70, 236, 0.7);
 
 $navbarHeight:3.2rem;
+$navbarWidth:100%;
 
 html {
   box-sizing: border-box;
@@ -71,27 +72,47 @@ li {
   }
 }
 
+#navbar.hidden {
+  left: $navbarWidth/2;
+  height: $navbarHeight;
+  transition: all .5s;
+
+  #menu {
+    left: -$navbarWidth/3;
+  }
+
+  li {
+    display: none;
+  }
+
+
+}
+
 #navbar {
   width: 100%;
-  height: $navbarHeight;
+  left: 0;
   background-color: $color3;
   padding: 1em;
   z-index: 99;
+  transition: all .5s;
 
   .active {
     @extend .button:hover;
   }
 
+  #menu {
+    font-weight: bolder;
+    position: relative;
+    left: $navbarWidth/3;
+  }
+
   ul {
     li {
-      display: inline;
-      padding: .5em;
+      font-weight: bolder;
+      padding: 1em;
+      margin: 2em;
 
-      a {
-        font-weight: bolder;
-        padding: 0.2em;
-        margin: 0.2em;
-      }
+      a {}
     }
   }
 }

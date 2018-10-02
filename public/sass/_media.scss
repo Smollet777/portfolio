@@ -19,15 +19,32 @@ $mainWidth:90%;
     }
   }
 
+  #navbar.hidden {
+    left: 0;
+
+    #menu {
+      display: none;
+    }
+
+    li {
+      display: inline;
+    }
+
+  }
+
   #navbar {
-    width: $mainWidth;
-    left: (100-$mainWidth)/2;
+    left: 0;
+
+    #menu {
+      display: none;
+    }
 
     .active {}
 
     ul {
       li {
         padding: 1em 3em;
+        display: inline;
 
         a {
           padding: 0.6em;
