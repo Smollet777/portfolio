@@ -107,10 +107,11 @@ li {
   }
 
   ul {
+    display: flex;
+    justify-content: center;
+
     li {
       font-weight: bolder;
-      padding: 1em;
-      margin: 2em;
 
       a {}
     }

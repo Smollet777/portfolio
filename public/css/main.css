@@ -79,10 +79,15 @@ li {
     font-weight: bolder;
     position: relative;
     left: 33.33333%; }
-  #navbar ul li {
-    font-weight: bolder;
-    padding: 1em;
-    margin: 2em; }
+  #navbar ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center; }
+    #navbar ul li {
+      font-weight: bolder; }
 
 #contacts {
   width: 100%;
@@ -327,7 +332,7 @@ section {
     #navbar #menu {
       display: none; }
     #navbar ul li {
-      padding: 1em 3em;
+      padding: 0 3em;
       display: inline; }
       #navbar ul li a {
         padding: 0.6em;
