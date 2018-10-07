@@ -95,42 +95,12 @@ $mainWidth:90%;
   #projects {
 
     .project-tile {
+      flex-flow: row nowrap;
 
       &:nth-child(even) {
 
         :last-child {
           order: -1;
-        }
-      }
-
-      .image {
-        transition: background-color .5s;
-
-        &:hover img {
-          opacity: 1;
-          transform: translate3d(0, 0, 0) scale(1.3);
-        }
-
-        &:hover .additional {
-          opacity: 1;
-          transform: scale(1);
-        }
-
-        img {
-          opacity: .6;
-          transform: translate3d(0, 0, 0) scale(1.1);
-          transition: all .5s;
-        }
-
-        img {
-          opacity: .6;
-          transform: translate3d(0, 0, 0) scale(1.1);
-        }
-
-        .additional {
-          transition: all .5s;
-
-          a {}
         }
       }
 
