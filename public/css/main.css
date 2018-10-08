@@ -152,7 +152,7 @@ li {
           width: 100%; }
     #projects .project-tile .mobile {
       position: relative;
-      margin-top: 2rem; }
+      margin-top: -4rem; }
       #projects .project-tile .mobile .svg {
         height: 15rem; }
       #projects .project-tile .mobile .image {
@@ -376,5 +376,11 @@ section {
       -webkit-box-ordinal-group: 0;
           -ms-flex-order: -1;
               order: -1; }
+    #projects .project-tile .desktop .image {
+      overflow: hidden; }
+    #projects .project-tile .mobile {
+      margin: 2rem 0 0 -6rem; }
+      #projects .project-tile .mobile .image {
+        overflow: hidden; }
   #footer {
     padding: 1rem; } }

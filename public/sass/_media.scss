@@ -104,6 +104,30 @@ $mainWidth:90%;
         }
       }
 
+      .desktop {
+
+        .svg {}
+
+        .image {
+          overflow: hidden;
+
+          img {}
+        }
+
+      }
+
+      .mobile {
+        margin: 2rem 0 0 -6rem;
+
+        .svg {}
+
+        .image {
+          overflow: hidden;
+
+          img {}
+        }
+      }
+
       .info {
 
         h3 {}
