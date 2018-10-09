@@ -220,8 +220,15 @@ li {
     .info {
       color: $color5;
       margin: 2em;
+      position: relative;
+
+      a {
+        display: inline-block;
+        margin: 1rem;
+      }
 
       h3 {
+        display: inline-block;
         font-weight: bold;
         font-size: 1.2rem;
         text-transform: uppercase;
