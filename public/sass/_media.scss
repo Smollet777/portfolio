@@ -95,6 +95,7 @@ $mainWidth:90%;
   #projects {
 
     .project-tile {
+      flex-flow: row nowrap;
 
       &:nth-child(even) {
 
@@ -103,34 +104,27 @@ $mainWidth:90%;
         }
       }
 
-      .image {
-        transition: background-color .5s;
+      .desktop {
 
-        &:hover img {
-          opacity: 1;
-          transform: translate3d(0, 0, 0) scale(1.3);
+        .svg {}
+
+        .image {
+          overflow: hidden;
+
+          img {}
         }
 
-        &:hover .additional {
-          opacity: 1;
-          transform: scale(1);
-        }
+      }
 
-        img {
-          opacity: .6;
-          transform: translate3d(0, 0, 0) scale(1.1);
-          transition: all .5s;
-        }
+      .mobile {
+        margin: 2rem 0 0 -6rem;
 
-        img {
-          opacity: .6;
-          transform: translate3d(0, 0, 0) scale(1.1);
-        }
+        .svg {}
 
-        .additional {
-          transition: all .5s;
+        .image {
+          overflow: hidden;
 
-          a {}
+          img {}
         }
       }
 
