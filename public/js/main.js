@@ -5,4 +5,4 @@ document.addEventListener('scroll', doAnimations);
 window.addEventListener('scroll', debounce(() => applyStyleOnNavLink(mainNavLinks), 500));
 smoothScrolling(mainNavLinks)
 setTimeout(frameLooper, 1000);
-scrollOnHover(imagesToScroll, 1);
+scrollOnHover(imagesToScroll, 200);
