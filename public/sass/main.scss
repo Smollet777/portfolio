@@ -73,6 +73,7 @@ li {
 }
 
 #navbar.hidden {
+  top: 5vh;
   left: $navbarWidth/2;
   height: $navbarHeight;
   transition: all .5s;
@@ -105,11 +106,10 @@ li {
   }
 
   ul {
-    display: flex;
-    justify-content: center;
-
     li {
       font-weight: bolder;
+      padding: 1em;
+      margin: 2em;
 
       a {}
     }

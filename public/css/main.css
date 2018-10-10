@@ -58,6 +58,7 @@ li {
       letter-spacing: 2px; }
 
 #navbar.hidden {
+  top: 5vh;
   left: 50%;
   height: 3.2rem;
   -webkit-transition: all .5s;
@@ -79,15 +80,10 @@ li {
     font-weight: bolder;
     position: relative;
     left: 33.33333%; }
-  #navbar ul {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center; }
-    #navbar ul li {
-      font-weight: bolder; }
+  #navbar ul li {
+    font-weight: bolder;
+    padding: 1em;
+    margin: 2em; }
 
 #contacts {
   width: 100%;
@@ -342,6 +338,7 @@ section {
     #welcome-section h1 {
       font-size: 3rem; }
   #navbar.hidden {
+    top: 0;
     left: 0; }
     #navbar.hidden #menu {
       display: none; }
