@@ -27,21 +27,17 @@ body {
   font-family: 'Raleway', sans-serif;
   background: $color1;
   background: linear-gradient(to top, $color1, $color4);
+}
 
-  .main {
-    text-align: center;
-    margin: 0 auto;
-    display: flex;
-    flex-flow: column wrap;
-    align-items: center;
-  }
 
+h1 {
+  font-size: 1.5rem;
+  margin: 1.5em 0 0.5em 0;
 }
 
 p {
   font-family: 'Roboto', 'sans-serif';
 }
-
 
 a {
   text-decoration: none;
@@ -53,30 +49,36 @@ li {
   list-style: none;
 }
 
-#welcome-section {
+.main {
+  text-align: center;
+  margin: 0 auto;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+}
 
+section {
+  padding-top: $navbarHeight;
+}
+
+#welcome-section {
   height: 100vh;
   color: $color0;
   padding: 20% 0 0 0;
+}
 
-  .avatar {
-    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+#social {
+  animation-delay: .6s;
+
+  p {
+    font-weight: bold;
+    line-height: 1.5rem;
+    letter-spacing: 2px;
   }
+}
 
-  h1 {
-    font-size: 1.5rem;
-    margin: 1.5em 0 0.5em 0;
-  }
-
-  #social {
-    animation-delay: .6s;
-
-    p {
-      font-weight: bold;
-      line-height: 1.5rem;
-      letter-spacing: 2px;
-    }
-  }
+.avatar {
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
 }
 
 #navbar.hidden {
@@ -102,10 +104,6 @@ li {
   z-index: 99;
   transition: all .5s;
 
-  .active {
-    @extend .button:hover;
-  }
-
   #menu {
     font-weight: bolder;
     position: relative;
@@ -117,10 +115,16 @@ li {
       font-weight: bolder;
       padding: 1em;
       margin: 2em;
-
-      a {}
     }
   }
+}
+
+.sticky {
+  position: fixed;
+}
+
+.active {
+  @extend .button:hover;
 }
 
 #contacts {
@@ -147,120 +151,109 @@ li {
     }
   }
 
-  .contactMe {
-    font-size: 1em;
-    font-weight: bold;
-    border-left: solid .2em;
-    border-right: solid .2em;
-  }
-
-  .mail {}
-
-  .skype {}
-
   a {
     @extend .button;
   }
+}
+
+.contactMe {
+  font-size: 1em;
+  font-weight: bold;
+  border-left: solid .2em;
+  border-right: solid .2em;
 }
 
 #projects {
   display: flex;
   flex-flow: column wrap;
   background-color: $color4;
+}
 
-  .project-tile {
-    position: relative;
-    width: 100%;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-around;
+.project-tile {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
 
-    &:nth-child(even) {
-      background-color: darken($color4, 3%);
-    }
+  &:nth-child(even) {
+    background-color: darken($color4, 3%);
+  }
+}
 
-    .desktop {
-      position: relative;
+.desktop {
+  position: relative;
 
-      .svg {
-        margin: 2rem;
-        height: 17.9rem;
-      }
-
-      .image {
-        position: absolute;
-        top: 0.4rem;
-        left: 0.4rem;
-        margin: 2.2rem;
-        height: 10.6rem;
-        width: 16.6rem;
-        overflow-y: scroll;
-
-        img {
-          width: 100%;
-        }
-      }
-
-    }
-
-    .mobile {
-      position: relative;
-      margin-top: -4rem;
-
-      .svg {
-        height: 15rem;
-      }
-
-      .image {
-        position: absolute;
-        top: 1.1rem;
-        left: 4.4rem;
-        height: 11.4rem;
-        width: 7.1rem;
-        overflow-y: scroll;
-
-        img {
-          width: 100%;
-        }
-      }
-    }
-
-    .info {
-      color: $color5;
-      margin: 2em;
-      position: relative;
-
-      a {
-        display: inline-block;
-        margin: 1rem;
-      }
-
-      h3 {
-        display: inline-block;
-        font-weight: bold;
-        font-size: 1.2rem;
-        text-transform: uppercase;
-        padding: .5em;
-      }
-
-      p {}
-
-      .cards {
-
-        .card {
-          display: inline-block;
-          color: $color0;
-          background-color: $color5;
-          font-weight: bold;
-          border: 1px solid $color0;
-          padding: 0.6em;
-          margin: 0.6em;
-        }
-      }
-    }
-
+  .svg {
+    margin: 2rem;
+    height: 17.9rem;
   }
 
+  .image {
+    position: absolute;
+    top: 0.4rem;
+    left: 0.4rem;
+    margin: 2.2rem;
+    height: 10.6rem;
+    width: 16.6rem;
+    overflow-y: scroll;
+
+    img {
+      width: 100%;
+    }
+  }
+
+}
+
+.mobile {
+  position: relative;
+  margin-top: -4rem;
+
+  .svg {
+    height: 15rem;
+  }
+
+  .image {
+    position: absolute;
+    top: 1.1rem;
+    left: 4.4rem;
+    height: 11.4rem;
+    width: 7.1rem;
+    overflow-y: scroll;
+
+    img {
+      width: 100%;
+    }
+  }
+}
+
+.info {
+  color: $color5;
+  margin: 2em;
+  position: relative;
+
+  a {
+    display: inline-block;
+    margin: 1rem;
+  }
+
+  h3 {
+    display: inline-block;
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    padding: .5em;
+  }
+}
+
+.card {
+  display: inline-block;
+  color: $color0;
+  background-color: $color5;
+  font-weight: bold;
+  border: 1px solid $color0;
+  padding: 0.6em;
+  margin: 0.6em;
 }
 
 #footer {
@@ -268,10 +261,6 @@ li {
   padding: 0;
   background-color: $color5;
   color: $color0;
-}
-
-.sticky {
-  position: fixed;
 }
 
 .button {
@@ -289,10 +278,6 @@ li {
     border: 1px solid $color5;
     transition: 0.2s ease-in;
   }
-}
-
-section {
-  padding-top: $navbarHeight;
 }
 
 
