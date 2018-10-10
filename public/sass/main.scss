@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway');
+@import url('https://fonts.googleapis.com/css?family=Roboto');
 
 $color0: rgba(255, 255, 255, 1);
 $color1: rgba(142, 148, 242, 1);
@@ -26,15 +27,21 @@ body {
   font-family: 'Raleway', sans-serif;
   background: $color1;
   background: linear-gradient(to top, $color1, $color4);
+
+  .main {
+    text-align: center;
+    margin: 0 auto;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+  }
+
 }
 
-.main {
-  text-align: center;
-  margin: 0 auto;
-  display: flex;
-  flex-flow: column wrap;
-  align-items: center;
+p {
+  font-family: 'Roboto', 'sans-serif';
 }
+
 
 a {
   text-decoration: none;
