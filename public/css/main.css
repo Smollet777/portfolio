@@ -156,7 +156,7 @@ section {
   position: relative; }
   .desktop .svg {
     margin: 2rem;
-    height: 17.9rem; }
+    height: 14.5rem; }
   .desktop .image {
     position: absolute;
     top: 0.4rem;
@@ -170,15 +170,15 @@ section {
 
 .mobile {
   position: relative;
-  margin-top: -4rem; }
+  margin-top: 2rem; }
   .mobile .svg {
     height: 15rem; }
   .mobile .image {
     position: absolute;
-    top: 1.1rem;
-    left: 4.4rem;
-    height: 11.4rem;
-    width: 7.1rem;
+    top: 1.2rem;
+    left: 0.4rem;
+    height: 11.5rem;
+    width: 7.2rem;
     overflow-y: scroll; }
     .mobile .image img {
       width: 100%; }
@@ -398,9 +398,7 @@ section {
               order: -1; }
     #projects .project-tile .desktop .image {
       overflow: hidden; }
-    #projects .project-tile .mobile {
-      margin: 2rem 0 0 -6rem; }
-      #projects .project-tile .mobile .image {
-        overflow: hidden; }
+    #projects .project-tile .mobile .image {
+      overflow: hidden; }
   #footer {
     padding: 1rem; } }
