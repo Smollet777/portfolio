@@ -1,4 +1,4 @@
-let smoothScrolling = function (links) {
+function smoothScrolling(links) {
   links.forEach(link => {
     let section = document.querySelector(link.hash);
     link.addEventListener('click', e => {
@@ -13,7 +13,7 @@ let smoothScrolling = function (links) {
 }
 
 //source https://codepen.io/chriscoyier/pen/qyELzd
-let applyStyleOnNavLink = function (links) {
+function applyStyleOnNavLink(links) {
   let fromTop = window.scrollY;
 
   links.forEach(link => {
