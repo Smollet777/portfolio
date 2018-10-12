@@ -1,21 +1,18 @@
 @import url("https://fonts.googleapis.com/css?family=Raleway");
 @import url("https://fonts.googleapis.com/css?family=Roboto");
 html {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box; }
+  box-sizing: border-box; }
 
 *,
 *:before,
 *:after {
-  -webkit-box-sizing: inherit;
-          box-sizing: inherit;
+  box-sizing: inherit;
   padding: 0;
   margin: 0; }
 
 body {
   font-family: 'Raleway', sans-serif;
   background: #8e94f2;
-  background: -webkit-gradient(linear, left bottom, left top, from(#8e94f2), to(#dab6fc));
   background: linear-gradient(to top, #8e94f2, #dab6fc); }
 
 h1 {
@@ -36,14 +33,13 @@ li {
 .main {
   text-align: center;
   margin: 0 auto;
-  display: -webkit-box;
+  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
+  -webkit-flex-flow: column wrap;
       -ms-flex-flow: column wrap;
           flex-flow: column wrap;
-  -webkit-box-align: center;
+  -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center; }
 
@@ -71,7 +67,6 @@ section {
   top: 5vh;
   left: 50%;
   height: 3.2rem;
-  -webkit-transition: all .5s;
   transition: all .5s; }
   #navbar.hidden #menu {
     left: -33.33333%; }
@@ -84,7 +79,6 @@ section {
   background-color: #bbadff;
   padding: 1em;
   z-index: 99;
-  -webkit-transition: all .5s;
   transition: all .5s; }
   #navbar #menu {
     font-weight: bolder;
@@ -102,7 +96,7 @@ section {
   width: 100%;
   display: grid;
   grid-template-columns: 1fr;
-  -webkit-box-align: center;
+  -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
   justify-items: center;
@@ -128,11 +122,10 @@ section {
   border-right: solid .2em; }
 
 #projects {
-  display: -webkit-box;
+  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
+  -webkit-flex-flow: column wrap;
       -ms-flex-flow: column wrap;
           flex-flow: column wrap;
   background-color: #dab6fc; }
@@ -140,15 +133,15 @@ section {
 .project-tile {
   position: relative;
   width: 100%;
-  display: -webkit-box;
+  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
+  -webkit-flex-flow: row wrap;
       -ms-flex-flow: row wrap;
           flex-flow: row wrap;
-  -ms-flex-pack: distribute;
-      justify-content: space-around; }
+  -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+          justify-content: space-around; }
   .project-tile:nth-child(even) {
     background-color: #d3a7fb; }
 
@@ -219,13 +212,11 @@ section {
   border: 1px solid white;
   padding: 0.6em;
   margin: 0.6em;
-  -webkit-transition: 0.7s ease-out;
   transition: 0.7s ease-out; }
   .button:hover, .active, #contacts a:hover {
     color: rgba(70, 70, 236, 0.7);
     background-color: white;
     border: 1px solid rgba(70, 70, 236, 0.7);
-    -webkit-transition: 0.2s ease-in;
     transition: 0.2s ease-in; }
 
 @-webkit-keyframes fadeIn {
@@ -388,12 +379,11 @@ section {
               animation-name: slideInRight;
       justify-self: start; }
   #projects .project-tile {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
+    -webkit-flex-flow: row nowrap;
         -ms-flex-flow: row nowrap;
             flex-flow: row nowrap; }
     #projects .project-tile:nth-child(even) :last-child {
-      -webkit-box-ordinal-group: 0;
+      -webkit-order: -1;
           -ms-flex-order: -1;
               order: -1; }
     #projects .project-tile .desktop .image {
