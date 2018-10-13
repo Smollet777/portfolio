@@ -1,4 +1,4 @@
-let doAnimations = function () {
+function doAnimations() {
 
   let offset = (document.documentElement.scrollTop || document.body.scrollTop) + (document.documentElement.clientHeight || document.body.clientHeight),
     animatables = document.querySelectorAll('.animatable');

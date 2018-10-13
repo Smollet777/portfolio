@@ -1,4 +1,4 @@
-const debounce = (func, delay) => {
+function debounce(func, delay) {
   let inDebounce
   return function () {
     clearTimeout(inDebounce)
