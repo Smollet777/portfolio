@@ -22,12 +22,12 @@ const AUTOPREFIXER_BROWSERS = [
 
 gulp.task('sass', (cb) => {
   pump([
-      gulp.src('/sass/**/*.+(sass|scss)'),
+      gulp.src('sass/**/*.+(sass|scss)'),
       sass(),
       autoprefixer({
         browsers: AUTOPREFIXER_BROWSERS
       }),
-      gulp.dest('/css'),
+      gulp.dest('css'),
       browserSync.stream()
     ],
     cb
@@ -42,35 +42,35 @@ gulp.task('browser-sync', () =>
   })
 );
 
-gulp.task('watch', ['browser-sync', 'sass', 'build'], () => {
-  gulp.watch(['/sass/**/*.+(sass|scss)'], ['sass']);
-  gulp.watch(['*.html', '/js/**/*.js']).on('change', browserSync.reload);
+gulp.task('watch', ['browser-sync', 'sass'], () => {
+  gulp.watch(['sass/**/*.+(sass|scss)'], ['sass']);
+  gulp.watch(['*.html', 'js/**/*.js']).on('change', browserSync.reload);
 });
 
 gulp.task('scripts', (cb) => {
   pump([
-      gulp.src(['/js/main.js', '/js/*.js']),
+      gulp.src(['js/main.js', 'js/*.js']),
       concat('all.min.js'),
       babel({
         presets: ['@babel/env']
       }),
       uglify(),
-      gulp.dest('/dist/')
+      gulp.dest('dist')
     ],
     cb
   );
 });
 
-gulp.task('del', () => del.sync(['/dist']));
+gulp.task('del', () => del.sync(['dist']));
 
 gulp.task('build', ['del', 'scripts'], (cb) => {
   pump([
-      gulp.src('/sass/**/*.+(sass|scss)'),
+      gulp.src('sass/**/*.+(sass|scss)'),
       sass({
         outputStyle: 'compressed'
       }),
       autoprefixer(),
-      gulp.dest('/dist')
+      gulp.dest('dist')
     ],
     cb
   );
