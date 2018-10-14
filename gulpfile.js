@@ -22,12 +22,12 @@ const AUTOPREFIXER_BROWSERS = [
 
 gulp.task('sass', (cb) => {
   pump([
-      gulp.src('public/sass/**/*.+(sass|scss)'),
+      gulp.src('/sass/**/*.+(sass|scss)'),
       sass(),
       autoprefixer({
         browsers: AUTOPREFIXER_BROWSERS
       }),
-      gulp.dest('public/css'),
+      gulp.dest('/css'),
       browserSync.stream()
     ],
     cb
@@ -36,41 +36,41 @@ gulp.task('sass', (cb) => {
 
 gulp.task('browser-sync', () =>
   browserSync.init({
-    server: "./public",
+    server: "./",
     files: "",
     notify: false
   })
 );
 
-gulp.task('watch', ['browser-sync', 'sass'], () => {
-  gulp.watch(['public/sass/**/*.+(sass|scss)'], ['sass']);
-  gulp.watch(['*.html', 'public/js/**/*.js']).on('change', browserSync.reload);
+gulp.task('watch', ['browser-sync', 'sass', 'build'], () => {
+  gulp.watch(['/sass/**/*.+(sass|scss)'], ['sass']);
+  gulp.watch(['*.html', '/js/**/*.js']).on('change', browserSync.reload);
 });
 
 gulp.task('scripts', (cb) => {
   pump([
-      gulp.src(['public/js/main.js', 'public/js/*.js']),
+      gulp.src(['/js/main.js', '/js/*.js']),
       concat('all.min.js'),
       babel({
         presets: ['@babel/env']
       }),
       uglify(),
-      gulp.dest('public/dist/')
+      gulp.dest('/dist/')
     ],
     cb
   );
 });
 
-gulp.task('del', () => del.sync(['public/dist']));
+gulp.task('del', () => del.sync(['/dist']));
 
 gulp.task('build', ['del', 'scripts'], (cb) => {
   pump([
-      gulp.src('public/sass/**/*.+(sass|scss)'),
+      gulp.src('/sass/**/*.+(sass|scss)'),
       sass({
         outputStyle: 'compressed'
       }),
       autoprefixer(),
-      gulp.dest('public/dist')
+      gulp.dest('/dist')
     ],
     cb
   );
