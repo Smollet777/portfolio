@@ -8,24 +8,15 @@ const gulp = require('gulp'),
   uglify = require('gulp-uglify'),
   del = require('del');
 
-const AUTOPREFIXER_BROWSERS = [
-  'ie >= 10',
-  'ie_mob >= 10',
-  'ff >= 30',
-  'chrome >= 34',
-  'safari >= 7',
-  'opera >= 23',
-  'ios >= 7',
-  'android >= 4.4',
-  'bb >= 10'
-];
-
 gulp.task('sass', (cb) => {
   pump([
       gulp.src('sass/**/*.+(sass|scss)'),
-      sass(),
+      sass({
+        outputStyle: 'compressed'
+      }),
       autoprefixer({
-        browsers: AUTOPREFIXER_BROWSERS
+        browsers: ['> 0.1%'],
+        cascade: false
       }),
       gulp.dest('css'),
       browserSync.stream()
@@ -69,7 +60,10 @@ gulp.task('build', ['del', 'scripts'], (cb) => {
       sass({
         outputStyle: 'compressed'
       }),
-      autoprefixer(),
+      autoprefixer({
+        browsers: ['> 0.1%'],
+        cascade: false
+      }),
       gulp.dest('dist')
     ],
     cb
