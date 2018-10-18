@@ -55,12 +55,14 @@ li {
 
 section {
   padding-top: $navbarHeight;
+  box-shadow: 0 1px 5px $color2;
 }
 
 #welcome-section {
   height: 100vh;
   color: $color3;
   padding: 20% 0 0 0;
+  box-shadow: none;
 }
 
 #social {
@@ -158,6 +160,7 @@ section {
   border-left: solid .2em;
   border-right: solid .2em;
   background-color: lighten($color3, 5%);
+  box-shadow: inset 0 1px 5px $color2;
 }
 
 #projects {
@@ -252,6 +255,7 @@ section {
   border-left: solid .2em;
   border-right: solid .2em;
   background-color: lighten($color1, 5%);
+  box-shadow: inset 0 1px 5px $color2;
 }
 
 .card {
@@ -276,6 +280,7 @@ section {
   border: 1px solid $color0;
   padding: 0.6em;
   margin: 0.6em;
+  box-shadow: 0 1px 5px $color2;
   transition: 0.7s ease-out;
 
   &:hover {
@@ -283,6 +288,10 @@ section {
     background-color: $color0;
     border: 1px solid $color3;
     transition: 0.2s ease-in;
+  }
+
+  &:active {
+    box-shadow: inset 0 0 10px $color2;
   }
 }
 

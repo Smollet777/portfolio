@@ -43,12 +43,14 @@ li {
           align-items: center; }
 
 section {
-  padding-top: 3.2rem; }
+  padding-top: 3.2rem;
+  box-shadow: 0 1px 5px #323732; }
 
 #welcome-section {
   height: 100vh;
   color: #3c5a96;
-  padding: 20% 0 0 0; }
+  padding: 20% 0 0 0;
+  box-shadow: none; }
 
 #social {
   -webkit-animation-delay: .6s;
@@ -119,7 +121,8 @@ section {
   font-weight: bold;
   border-left: solid .2em;
   border-right: solid .2em;
-  background-color: #4365a8; }
+  background-color: #4365a8;
+  box-shadow: inset 0 1px 5px #323732; }
 
 #projects {
   display: -webkit-flex;
@@ -196,7 +199,8 @@ section {
   color: #29461a;
   border-left: solid .2em;
   border-right: solid .2em;
-  background-color: #a4d48b; }
+  background-color: #a4d48b;
+  box-shadow: inset 0 1px 5px #323732; }
 
 .card {
   display: inline-block;
@@ -218,12 +222,15 @@ section {
   border: 1px solid white;
   padding: 0.6em;
   margin: 0.6em;
+  box-shadow: 0 1px 5px #323732;
   transition: 0.7s ease-out; }
   .button:hover, .active, #contacts a:hover {
     color: #3c5a96;
     background-color: white;
     border: 1px solid #3c5a96;
     transition: 0.2s ease-in; }
+  .button:active, #contacts a:active {
+    box-shadow: inset 0 0 10px #323732; }
 
 @-webkit-keyframes fadeIn {
   0% {
