@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto%7CRusso+One&subset=cyrillic%27');
+@import url('https://fonts.googleapis.com/css?family=Prosto+One|Roboto&subset=cyrillic');
 
 $color0: rgb(255, 255, 255);
 $color1: rgba(150, 205, 120, 1);
@@ -21,9 +21,10 @@ html {
 }
 
 body {
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Prosto One', sans-serif;
   background: $color1;
   background: linear-gradient(to bottom, $color0, $color1);
+  letter-spacing: 2px;
 }
 
 h1 {
@@ -33,6 +34,7 @@ h1 {
 
 p {
   font-family: 'Roboto', 'sans-serif';
+  letter-spacing: 0;
 }
 
 a {
