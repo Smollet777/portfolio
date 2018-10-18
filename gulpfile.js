@@ -18,7 +18,7 @@ gulp.task('sass', (cb) => {
         browsers: ['> 0.1%'],
         cascade: false
       }),
-      gulp.dest('css'),
+      gulp.dest('dist'),
       browserSync.stream()
     ],
     cb
@@ -35,7 +35,8 @@ gulp.task('browser-sync', () =>
 
 gulp.task('watch', ['browser-sync', 'sass'], () => {
   gulp.watch(['sass/**/*.+(sass|scss)'], ['sass']);
-  gulp.watch(['*.html', 'js/**/*.js']).on('change', browserSync.reload);
+  gulp.watch(['js/**/*.js'], ['scripts']);
+  gulp.watch(['*.html']).on('change', browserSync.reload);
 });
 
 gulp.task('scripts', (cb) => {
