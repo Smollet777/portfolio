@@ -12,8 +12,8 @@ html {
 
 body {
   font-family: 'Raleway', sans-serif;
-  background: #8e94f2;
-  background: linear-gradient(to top, #8e94f2, #dab6fc); }
+  background: #96cd78;
+  background: linear-gradient(to bottom, white, #96cd78); }
 
 h1 {
   font-size: 1.5rem;
@@ -25,7 +25,7 @@ p {
 a {
   text-decoration: none;
   display: inline;
-  color: rgba(70, 70, 236, 0.7); }
+  color: #96cd78; }
 
 li {
   list-style: none; }
@@ -48,7 +48,7 @@ section {
 
 #welcome-section {
   height: 100vh;
-  color: white;
+  color: #3c5a96;
   padding: 20% 0 0 0; }
 
 #social {
@@ -76,7 +76,7 @@ section {
 #navbar {
   width: 100%;
   left: 0;
-  background-color: #bbadff;
+  background-color: #3c5a96;
   padding: 1em;
   z-index: 99;
   transition: all .5s; }
@@ -100,7 +100,7 @@ section {
       -ms-flex-align: center;
           align-items: center;
   justify-items: center;
-  background-color: #8e94f2; }
+  background-color: #3c5a96; }
   #contacts p,
   #contacts a {
     color: white;
@@ -119,7 +119,8 @@ section {
   font-size: 1em;
   font-weight: bold;
   border-left: solid .2em;
-  border-right: solid .2em; }
+  border-right: solid .2em;
+  background-color: #4365a8; }
 
 #projects {
   display: -webkit-flex;
@@ -128,7 +129,7 @@ section {
   -webkit-flex-flow: column wrap;
       -ms-flex-flow: column wrap;
           flex-flow: column wrap;
-  background-color: #dab6fc; }
+  background-color: #96cd78; }
 
 .project-tile {
   position: relative;
@@ -143,7 +144,7 @@ section {
       -ms-flex-pack: distribute;
           justify-content: space-around; }
   .project-tile:nth-child(even) {
-    background-color: #d3a7fb; }
+    background-color: #8ac769; }
 
 .desktop {
   position: relative; }
@@ -177,7 +178,7 @@ section {
       width: 100%; }
 
 .info {
-  color: rgba(70, 70, 236, 0.7);
+  color: #3c5a96;
   margin: 2em;
   position: relative; }
   .info a {
@@ -189,34 +190,40 @@ section {
     font-size: 1.2rem;
     text-transform: uppercase;
     padding: .5em; }
+  .info p {
+    color: #2d4472; }
+
+.cards {
+  color: #29461a;
+  border-left: solid .2em;
+  border-right: solid .2em;
+  background-color: #a4d48b; }
 
 .card {
   display: inline-block;
-  color: white;
-  background-color: rgba(70, 70, 236, 0.7);
+  color: #29461a;
   font-weight: bold;
-  border: 1px solid white;
   padding: 0.6em;
   margin: 0.6em; }
 
 #footer {
   width: 100%;
   padding: 0;
-  background-color: rgba(70, 70, 236, 0.7);
+  background-color: #2d4472;
   color: white; }
 
 .button, #contacts a {
   color: white;
-  background-color: transparent;
+  background-color: #3c5a96;
   font-weight: bold;
   border: 1px solid white;
   padding: 0.6em;
   margin: 0.6em;
   transition: 0.7s ease-out; }
   .button:hover, .active, #contacts a:hover {
-    color: rgba(70, 70, 236, 0.7);
+    color: #3c5a96;
     background-color: white;
-    border: 1px solid rgba(70, 70, 236, 0.7);
+    border: 1px solid #3c5a96;
     transition: 0.2s ease-in; }
 
 @-webkit-keyframes fadeIn {
@@ -318,21 +325,15 @@ section {
           animation-duration: 1s; }
 
 @-webkit-keyframes blink-caret {
-  0%,
-  100% {
-    border-color: transparent; }
   50% {
-    border-color: white; } }
+    border-color: #3c5a96; } }
 
 @keyframes blink-caret {
-  0%,
-  100% {
-    border-color: transparent; }
   50% {
-    border-color: white; } }
+    border-color: #3c5a96; } }
 
 .typing {
-  border-right: 0.2em solid white;
+  border-right: .2em solid transparent;
   -webkit-animation: blink-caret 1s infinite;
           animation: blink-caret 1s infinite; }
 
