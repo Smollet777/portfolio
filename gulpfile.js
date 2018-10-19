@@ -3,20 +3,39 @@ const gulp = require('gulp'),
   pump = require('pump'),
   sass = require('gulp-sass'),
   autoprefixer = require('gulp-autoprefixer'),
+  cleanCSS = require('gulp-clean-css'),
   concat = require('gulp-concat'),
   babel = require('gulp-babel'),
   uglify = require('gulp-uglify'),
   del = require('del');
 
-gulp.task('sass', (cb) => {
+gulp.task('build', ['del', 'scripts'], (cb) => {
   pump([
       gulp.src('sass/**/*.+(sass|scss)'),
-      sass({
-        outputStyle: 'compressed'
-      }),
+      sass(),
       autoprefixer({
         browsers: ['> 0.1%'],
         cascade: false
+      }),
+      cleanCSS({
+        level: 2
+      }),
+      gulp.dest('dist')
+    ],
+    cb
+  );
+});
+
+gulp.task('sass', (cb) => {
+  pump([
+      gulp.src('sass/**/*.+(sass|scss)'),
+      sass(),
+      autoprefixer({
+        browsers: ['> 0.1%'],
+        cascade: false
+      }),
+      cleanCSS({
+        level: 2
       }),
       gulp.dest('dist'),
       browserSync.stream()
@@ -54,19 +73,3 @@ gulp.task('scripts', (cb) => {
 });
 
 gulp.task('del', () => del.sync(['dist']));
-
-gulp.task('build', ['del', 'scripts'], (cb) => {
-  pump([
-      gulp.src('sass/**/*.+(sass|scss)'),
-      sass({
-        outputStyle: 'compressed'
-      }),
-      autoprefixer({
-        browsers: ['> 0.1%'],
-        cascade: false
-      }),
-      gulp.dest('dist')
-    ],
-    cb
-  );
-});
