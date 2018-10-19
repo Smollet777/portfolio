@@ -65,7 +65,9 @@ gulp.task('scripts', (cb) => {
       babel({
         presets: ['@babel/env']
       }),
-      uglify(),
+      uglify({
+        toplevel: true
+      }),
       gulp.dest('dist')
     ],
     cb

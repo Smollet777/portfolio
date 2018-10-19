@@ -8,5 +8,5 @@ function frameLooper() {
   } else {
     clearTimeout(0);
   }
-  setTimeout('frameLooper()', 50);
+  setTimeout(frameLooper, 50);
 }
