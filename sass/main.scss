@@ -172,6 +172,7 @@ section {
 }
 
 .project-tile {
+  padding: 30px;
   position: relative;
   width: 100%;
   display: flex;
@@ -248,7 +249,8 @@ section {
   }
 
   p {
-    color: darken($color3, 10%)
+    color: darken($color3, 10%);
+    padding-bottom: 30px;
   }
 }
 
