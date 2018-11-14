@@ -1,7 +1,14 @@
 $mainWidth:90%;
 
-// Small devices (landscape phones, 576px and up)
-@media (max-width: 576px) {}
+@media (max-width: 576px) and (orientation:landscape) {
+  #welcome-section {
+    padding-top: $navbarHeight;
+
+    .avatar {
+      display: none;
+    }
+  }
+}
 
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
