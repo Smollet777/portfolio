@@ -7,9 +7,22 @@ const gulp = require('gulp'),
   concat = require('gulp-concat'),
   babel = require('gulp-babel'),
   uglify = require('gulp-uglify'),
-  del = require('del');
+  del = require('del'),
+  critical = require('critical');
 
-gulp.task('build', ['del', 'scripts'], (cb) => {
+gulp.task('build', ['del', 'scripts', 'css'], (cb) => {
+  critical.generate({
+    inline: true,
+    css: ['dist/main.css'],
+    src: 'noCriticalCSS.html',
+    dest: 'index.html',
+    minify: true,
+    width: 1300,
+    height: 900,
+  });
+});
+
+gulp.task('css', (cb) => {
   pump([
       gulp.src('sass/**/*.+(sass|scss)'),
       sass(),
