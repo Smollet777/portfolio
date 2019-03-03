@@ -61,7 +61,8 @@ gulp.task('browser-sync', () =>
   browserSync.init({
     server: "./",
     files: "",
-    notify: false
+    notify: false,
+    index: "noCriticalCSS.html"
   })
 );
 
