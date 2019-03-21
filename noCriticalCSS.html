@@ -19,6 +19,7 @@
       .image {
         overflow-y: scroll !important
       }
+
     </style>
   </noscript>
 </head>
@@ -26,49 +27,49 @@
 <body>
   <div class="main">
 
-    <section id="navbar" class="sticky hidden">
-      <a class="button" id="menu">Меню</a>
+    <section id="navbar" class="navbar navbar_hidden">
+      <a class="menu-button button">Меню</a>
       <ul>
-        <li><a class="button active" href="#welcome-section">Наверх</a></li>
-        <li><a class="button" href="#projects">Проекты</a></li>
-        <li><a class="button" href="#contacts">Контакты</a></li>
+        <li class="section-link"><a class="button button_active" href="#welcome-section">Наверх</a></lis>
+        <li class="section-link"><a class="button" href="#projects">Проекты</a></li>
+        <li class="section-link"><a class="button" href="#contacts">Контакты</a></li>
       </ul>
     </section>
 
-    <section id="welcome-section">
+    <section id="welcome-section" class="welcome-section">
       <div>
         <img class="avatar fadeIn" src="https://pbs.twimg.com/profile_images/462239431550697473/2ja1TTyi_400x400.jpeg"
           alt="photo" width="200" height="200">
       </div>
       <h1 class="fadeInUp">Добро Пожаловать</h1>
-      <div id="social" class="fadeInUp">
+      <div class="social fadeInUp">
         <p>
           >
           <span class="typing">
             в мое портфолио. Меня зовут Иван.</span>
         </p>
-        <br>
         <p><i class="fas fa-envelope"></i>ivansmollet@gmail.com</p>
         <p><i class="fab fa-skype"></i>Smollet777</p>
       </div>
     </section>
 
-    <section id="projects">
-      <div class="project-tile">
-        <div class="desktop">
+    <section id="projects" class="projects">
+      <div class="project">
+        <div class="project__desktop-view">
           <div class="image"><img src="https://cdn.discordapp.com/attachments/375252706522300428/500674938617856010/site_d.png"
               alt="desktop view"></div>
           <img class="svg" src="./img/desktop.svg" alt="">
         </div>
-        <div class="mobile">
+        <div class="project__mobile-view">
           <div class="image"><img src="https://cdn.discordapp.com/attachments/375252706522300428/500674943181258762/site_m.png"
               alt="mobile view"></div>
           <img class="svg" src="./img/mobile.svg" alt="">
         </div>
-        <div class="info">
-          <h3>Title 1</h3>
-          <a href="javascript:void(0);" class="button">посетить сайт</a>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut, hic commodi sequi laboriosam iusto eius
+        <div class="project-info">
+          <h3 class="project-info__header">Title 1</h3>
+          <a href="javascript:void(0);" class="button project-info__link">посетить сайт</a>
+          <p class="project-info__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut, hic
+            commodi sequi laboriosam iusto eius
             quisquam eum, ea accusantium distinctio magni laudantium deserunt unde sed vel, dolorem ratione quam
             cupiditate?</p>
           <div class="cards">
@@ -78,42 +79,44 @@
           </div>
         </div>
       </div>
-      <div class="project-tile">
-        <div class="desktop">
+      <div class="project">
+        <div class="project__desktop-view">
           <div class="image"><img src="https://cdn.discordapp.com/attachments/375252706522300428/500674938617856010/site_d.png"
               alt="desktop view"></div>
           <img class="svg" src="./img/desktop.svg" alt="">
         </div>
-        <div class="mobile">
+        <div class="project__mobile-view">
           <div class="image"><img src="https://cdn.discordapp.com/attachments/375252706522300428/500674943181258762/site_m.png"
               alt="mobile view"></div>
           <img class="svg" src="./img/mobile.svg" alt="">
         </div>
-        <div class="info">
-          <h3>Title 2</h3>
-          <a href="javascript:void(0);" class="button">посетить сайт</a>
-          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Debitis enim, harum libero accusantium dolore
+        <div class="project-info">
+          <h3 class="project-info__header">Title 2</h3>
+          <a href="javascript:void(0);" class="button project-info__link">посетить сайт</a>
+          <p class="project-info__description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Debitis enim,
+            harum libero accusantium dolore
             adipisci.</p>
           <div class="cards">
             <div class="card"><i class="fab fa-angular"></i>Angular</div>
           </div>
         </div>
       </div>
-      <div class="project-tile">
-        <div class="desktop">
+      <div class="project">
+        <div class="project__desktop-view">
           <div class="image"><img src="https://cdn.discordapp.com/attachments/375252706522300428/500674938617856010/site_d.png"
               alt="desktop view"></div>
           <img class="svg" src="./img/desktop.svg" alt="">
         </div>
-        <div class="mobile">
+        <div class="project__mobile-view">
           <div class="image"><img src="https://cdn.discordapp.com/attachments/375252706522300428/500674943181258762/site_m.png"
               alt="mobile view"></div>
           <img class="svg" src="./img/mobile.svg" alt="">
         </div>
-        <div class="info">
-          <h3>Title 3</h3>
-          <a href="javascript:void(0);" class="button">посетить сайт</a>
-          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cupiditate incidunt deserunt in commodi,
+        <div class="project-info">
+          <h3 class="project-info__header">Title 3</h3>
+          <a href="javascript:void(0);" class="button project-info__link">посетить сайт</a>
+          <p class="project-info__description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cupiditate
+            incidunt deserunt in commodi,
             molestias alias. Sequi quisquam totam architecto sapiente reprehenderit cumque! Tenetur, quo aliquam.</p>
           <div class="cards">
             <div class="card"><i class="fab fa-html5"></i>HTML</div>
@@ -123,7 +126,7 @@
       </div>
     </section>
 
-    <section id="contacts">
+    <section id="contacts" class="contacts">
       <p class="contactMe">Контакты</p>
       <p class="mail"><i class="fas fa-envelope"></i>ivansmollet@gmail.com</p>
       <p class="skype"><i class="fab fa-skype"></i>Smollet777</p>
@@ -138,7 +141,7 @@
           class="fab fa-stack-overflow"></i>Smollet777</a>
     </section>
 
-    <section id="footer">
+    <section id="footer" class="footer">
       © Ivan Smollet 2018
     </section>
     <script src="./dist/all.min.js"></script>

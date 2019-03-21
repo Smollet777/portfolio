@@ -23,9 +23,9 @@ function applyStyleOnNavLink(links) {
       section.offsetTop / 2 <= fromTop &&
       section.offsetTop + section.offsetHeight > fromTop
     ) {
-      link.classList.add("active");
+      link.classList.add("button_active");
     } else {
-      link.classList.remove("active");
+      link.classList.remove("button_active");
     }
   })
 }

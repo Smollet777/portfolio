@@ -60,17 +60,17 @@ section {
   box-shadow: 0 1px 5px $color2;
 }
 
-#welcome-section {
+.welcome-section {
   height: 100vh;
   color: $color3;
   padding: 20% 0 0 0;
   box-shadow: none;
 }
 
-#social {
+.social {
   animation-delay: .6s;
 
-  p {
+  &>p {
     font-weight: bold;
     line-height: 1.5rem;
     letter-spacing: 2px;
@@ -81,22 +81,8 @@ section {
   clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
 }
 
-#navbar.hidden {
-  top: 5vh;
-  left: $navbarWidth/2;
-  height: $navbarHeight;
-  transition: all .5s;
-
-  #menu {
-    left: -$navbarWidth/3;
-  }
-
-  li {
-    display: none;
-  }
-}
-
-#navbar {
+.navbar {
+  position: fixed;
   width: 100%;
   left: 0;
   background-color: $color3;
@@ -104,30 +90,35 @@ section {
   z-index: 99;
   transition: all .5s;
 
-  #menu {
+  .menu-button {
     font-weight: bolder;
     position: relative;
     left: $navbarWidth/3;
   }
 
-  ul {
-    li {
-      font-weight: bolder;
-      padding: 1em;
-      margin: 2em;
+  .section-link {
+    font-weight: bolder;
+    padding: 1em;
+    margin: 2em;
+  }
+
+  &_hidden {
+    top: 5vh;
+    left: $navbarWidth/2;
+    height: $navbarHeight;
+    transition: all .5s;
+
+    .menu-button {
+      left: -$navbarWidth/3;
+    }
+
+    .section-link {
+      display: none;
     }
   }
 }
 
-.sticky {
-  position: fixed;
-}
-
-.active {
-  @extend .button:hover;
-}
-
-#contacts {
+.contacts {
   width: 100%;
   display: grid;
   grid-template-columns: 1fr;
@@ -165,13 +156,13 @@ section {
   box-shadow: inset 0 1px 5px $color2;
 }
 
-#projects {
+.projects {
   display: flex;
   flex-flow: column wrap;
   background-color: $color1;
 }
 
-.project-tile {
+.project {
   padding: 30px;
   position: relative;
   width: 100%;
@@ -182,75 +173,75 @@ section {
   &:nth-child(even) {
     background-color: darken($color1, 4%);
   }
-}
 
-.desktop {
-  position: relative;
+  &__desktop-view {
+    position: relative;
 
-  .svg {
-    margin: 2rem;
-    height: 14.2rem;
+    .svg {
+      margin: 2rem;
+      height: 14.2rem;
+    }
+
+    .image {
+      position: absolute;
+      top: 0.4rem;
+      left: 0.4rem;
+      margin: 2.2rem;
+      height: 10.6rem;
+      width: 16.1rem;
+      overflow-y: scroll;
+
+      img {
+        width: 100%;
+      }
+    }
+
   }
 
-  .image {
-    position: absolute;
-    top: 0.4rem;
-    left: 0.4rem;
-    margin: 2.2rem;
-    height: 10.6rem;
-    width: 16.1rem;
-    overflow-y: scroll;
+  &__mobile-view {
+    position: relative;
+    margin-top: 2rem;
 
-    img {
-      width: 100%;
+    .svg {
+      height: 14.7rem;
+    }
+
+    .image {
+      position: absolute;
+      top: 1.2rem;
+      left: 0.4rem;
+      height: 11.5rem;
+      width: 7.2rem;
+      overflow-y: scroll;
+
+      img {
+        width: 100%;
+      }
     }
   }
 
-}
+  &-info {
+    color: $color3;
+    margin: 2em;
+    position: relative;
 
-.mobile {
-  position: relative;
-  margin-top: 2rem;
-
-  .svg {
-    height: 14.7rem;
-  }
-
-  .image {
-    position: absolute;
-    top: 1.2rem;
-    left: 0.4rem;
-    height: 11.5rem;
-    width: 7.2rem;
-    overflow-y: scroll;
-
-    img {
-      width: 100%;
+    &__link {
+      display: inline-block;
+      margin: 1rem;
     }
-  }
-}
 
-.info {
-  color: $color3;
-  margin: 2em;
-  position: relative;
+    &__header {
+      display: inline-block;
+      font-weight: bold;
+      font-size: 1.2rem;
+      text-transform: uppercase;
+      padding: .5em;
+    }
 
-  a {
-    display: inline-block;
-    margin: 1rem;
-  }
-
-  h3 {
-    display: inline-block;
-    font-weight: bold;
-    font-size: 1.2rem;
-    text-transform: uppercase;
-    padding: .5em;
-  }
-
-  p {
-    color: darken($color3, 10%);
-    padding-bottom: 30px;
+    &__description {
+      color: darken($color3, 10%);
+      padding-bottom: 30px;
+    }
   }
 }
 
@@ -270,7 +261,7 @@ section {
   margin: 0.6em;
 }
 
-#footer {
+.footer {
   width: 100%;
   padding: 0;
   background-color: darken($color3, 10%);
@@ -287,7 +278,8 @@ section {
   box-shadow: 0 1px 5px $color2;
   transition: 0.7s ease-out;
 
-  &:hover {
+  &:hover,
+  &_active {
     color: $color3;
     background-color: $color0;
     border: 1px solid $color3;

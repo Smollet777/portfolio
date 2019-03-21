@@ -1,7 +1,7 @@
 $mainWidth:90%;
 
 @media (max-width: 576px) and (orientation:landscape) {
-  #welcome-section {
+  .welcome-section {
     padding-top: $navbarHeight;
 
     .avatar {
@@ -12,63 +12,39 @@ $mainWidth:90%;
 
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
-  #welcome-section {
+  .welcome-section {
     padding: 12% 0 0 0;
-
-    .avatar {}
 
     h1 {
       font-size: 3rem;
     }
-
-    #social {
-      p {}
-    }
   }
 
-  #navbar.hidden {
-    top: 0;
+  .navbar {
     left: 0;
 
-    #menu {
+    .menu-button {
       display: none;
     }
 
-    li {
+    .section-link {
+      padding: 0 3em;
       display: inline;
-    }
 
-  }
-
-  #navbar {
-    left: 0;
-
-    #menu {
-      display: none;
-    }
-
-    .active {}
-
-    ul {
-      li {
-        padding: 0 3em;
-        display: inline;
-
-        a {
-          padding: 0.6em;
-          margin: 0.6em;
-        }
+      .button {
+        padding: 0.6em;
+        margin: 0.6em;
       }
     }
+
+    &_hidden {
+      top: 0;
+      left: 0;
+    }
   }
 
-  #contacts {
+  .contacts {
     grid-template-columns: repeat(3, 1fr);
-
-    p,
-    a {
-      i {}
-    }
 
     .contactMe {
       grid-area: 2/2/3/3;
@@ -100,9 +76,9 @@ $mainWidth:90%;
     }
   }
 
-  #projects {
+  .projects {
 
-    .project-tile {
+    .project {
       flex-flow: row nowrap;
 
       &:nth-child(even) {
@@ -112,41 +88,25 @@ $mainWidth:90%;
         }
       }
 
-      .desktop {
-
-        .svg {}
+      &__desktop-view {
 
         .image {
           overflow: hidden;
-
-          img {}
         }
 
       }
 
-      .mobile {
-
-        .svg {}
-
+      &__mobile-view {
         .image {
           overflow: hidden;
-
-          img {}
         }
-      }
-
-      .info {
-
-        h3 {}
-
-        p {}
       }
 
     }
 
   }
 
-  #footer {
+  .footer {
     padding: 1rem;
   }
 }

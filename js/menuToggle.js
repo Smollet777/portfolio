@@ -3,6 +3,6 @@ const menu = document.querySelector('#navbar');
 
 navLinks.forEach(elem => {
   elem.addEventListener('click', () => {
-    menu.classList.toggle('hidden');
+    menu.classList.toggle('navbar_hidden');
   });
 });
