@@ -55,12 +55,12 @@ li {
   align-items: center;
 }
 
-section {
+.section {
   padding-top: $navbarHeight;
   box-shadow: 0 1px 5px $color2;
 }
 
-.welcome-section {
+.welcome {
   height: 100vh;
   color: $color3;
   padding: 20% 0 0 0;
@@ -126,8 +126,7 @@ section {
   justify-items: center;
   background-color: $color3;
 
-  p,
-  a {
+  &__item {
     color: $color0;
     margin: .5em;
     padding: .5em;
