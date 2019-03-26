@@ -1,6 +1,5 @@
 const gulp = require('gulp'),
   browserSync = require('browser-sync').create(),
-  pump = require('pump'),
   sass = require('gulp-sass'),
   autoprefixer = require('gulp-autoprefixer'),
   cleanCSS = require('gulp-clean-css'),
@@ -10,8 +9,60 @@ const gulp = require('gulp'),
   del = require('del'),
   critical = require('critical');
 
-gulp.task('build', ['del', 'scripts', 'css'], (cb) => {
-  critical.generate({
+function styles() {
+  return gulp.src('sass/**/*.+(sass|scss)')
+    .pipe(sass().on('error', sass.logError))
+    .pipe(autoprefixer({
+      browsers: ['> 0.1%'],
+      cascade: false
+    }))
+    .pipe(gulp.dest('dist'))
+}
+
+function css() {
+  return gulp.src('sass/**/*.+(sass|scss)')
+    .pipe(sass().on('error', sass.logError))
+    .pipe(autoprefixer({
+      browsers: ['> 0.1%'],
+      cascade: false
+    }))
+    .pipe(cleanCSS({
+      level: 2
+    }))
+    .pipe(gulp.dest('dist'));
+}
+
+function watch() {
+  browserSync.init({
+    server: "./",
+    files: "",
+    notify: false,
+    index: "noCriticalCSS.html"
+  })
+
+  gulp.watch(['sass/**/*.+(sass|scss)'], css);
+  gulp.watch(['js/**/*.js'], scripts);
+  gulp.watch(['*.html']).on('change', browserSync.reload);
+}
+
+function scripts() {
+  return gulp.src(['js/main.js', 'js/*.js'])
+    .pipe(concat('all.min.js'))
+    .pipe(babel({
+      presets: ['@babel/env']
+    }))
+    .pipe(uglify({
+      toplevel: true
+    }))
+    .pipe(gulp.dest('dist'))
+}
+
+function clean() {
+  return del(['dist'])
+}
+
+function criticalCSS() {
+  return critical.generate({
     inline: true,
     css: ['dist/main.css'],
     src: 'noCriticalCSS.html',
@@ -20,72 +71,10 @@ gulp.task('build', ['del', 'scripts', 'css'], (cb) => {
     width: 1300,
     height: 900,
   });
-});
+}
 
-gulp.task('css', (cb) => {
-  pump([
-      gulp.src('sass/**/*.+(sass|scss)'),
-      sass(),
-      autoprefixer({
-        browsers: ['> 0.1%'],
-        cascade: false
-      }),
-      cleanCSS({
-        level: 2
-      }),
-      gulp.dest('dist')
-    ],
-    cb
-  );
-});
 
-gulp.task('sass', (cb) => {
-  pump([
-      gulp.src('sass/**/*.+(sass|scss)'),
-      sass(),
-      autoprefixer({
-        browsers: ['> 0.1%'],
-        cascade: false
-      }),
-      cleanCSS({
-        level: 2
-      }),
-      gulp.dest('dist'),
-      browserSync.stream()
-    ],
-    cb
-  );
-});
-
-gulp.task('browser-sync', () =>
-  browserSync.init({
-    server: "./",
-    files: "",
-    notify: false,
-    index: "noCriticalCSS.html"
-  })
-);
-
-gulp.task('watch', ['browser-sync', 'sass'], () => {
-  gulp.watch(['sass/**/*.+(sass|scss)'], ['sass']);
-  gulp.watch(['js/**/*.js'], ['scripts']);
-  gulp.watch(['*.html']).on('change', browserSync.reload);
-});
-
-gulp.task('scripts', (cb) => {
-  pump([
-      gulp.src(['js/main.js', 'js/*.js']),
-      concat('all.min.js'),
-      babel({
-        presets: ['@babel/env']
-      }),
-      uglify({
-        toplevel: true
-      }),
-      gulp.dest('dist')
-    ],
-    cb
-  );
-});
-
-gulp.task('del', () => del.sync(['dist']));
+gulp.task('watch', watch);
+gulp.task('del', clean);
+gulp.task('sass', styles);
+gulp.task('build', gulp.series('del', gulp.parallel(scripts, css), criticalCSS));
