@@ -1,4 +1,6 @@
 const gulp = require('gulp'),
+  gulpif = require('gulp-if'),
+  minimist = require('minimist'),
   browserSync = require('browser-sync').create(),
   sass = require('gulp-sass'),
   autoprefixer = require('gulp-autoprefixer'),
@@ -9,6 +11,15 @@ const gulp = require('gulp'),
   del = require('del'),
   critical = require('critical');
 
+const knownOptions = {
+  string: 'env',
+  default: {
+    env: process.env.NODE_ENV || 'production'
+  }
+};
+
+const options = minimist(process.argv.slice(2), knownOptions);
+
 function styles() {
   return gulp.src('sass/**/*.+(sass|scss)')
     .pipe(sass().on('error', sass.logError))
@@ -16,19 +27,11 @@ function styles() {
       browsers: ['> 0.1%'],
       cascade: false
     }))
-    .pipe(gulp.dest('dist'))
-}
-
-function css() {
-  return gulp.src('sass/**/*.+(sass|scss)')
-    .pipe(sass().on('error', sass.logError))
-    .pipe(autoprefixer({
-      browsers: ['> 0.1%'],
-      cascade: false
-    }))
-    .pipe(cleanCSS({
-      level: 2
-    }))
+    .pipe(
+      gulpif(options.env === 'production', cleanCSS({
+        level: 2
+      }))
+    )
     .pipe(gulp.dest('dist'));
 }
 
@@ -40,7 +43,7 @@ function watch() {
     index: "noCriticalCSS.html"
   })
 
-  gulp.watch(['sass/**/*.+(sass|scss)'], css);
+  gulp.watch(['sass/**/*.+(sass|scss)'], styles);
   gulp.watch(['js/**/*.js'], scripts);
   gulp.watch(['*.html']).on('change', browserSync.reload);
 }
@@ -77,4 +80,4 @@ function criticalCSS() {
 gulp.task('watch', watch);
 gulp.task('del', clean);
 gulp.task('sass', styles);
-gulp.task('build', gulp.series('del', gulp.parallel(scripts, css), criticalCSS));
+gulp.task('build', gulp.series('del', gulp.parallel(scripts, styles), criticalCSS));
