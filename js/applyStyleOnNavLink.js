@@ -1,3 +1,5 @@
+"use strict";
+
 function smoothScrolling(links) {
   links.forEach(link => {
     let section = document.querySelector(link.hash);

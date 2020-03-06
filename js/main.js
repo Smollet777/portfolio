@@ -1,3 +1,4 @@
+"use strict";
 const mainNavLinks = document.querySelectorAll("#navbar ul li a");
 const imagesToScroll = document.querySelectorAll('.image>img');
 const svg = document.querySelectorAll('.svg');

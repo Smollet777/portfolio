@@ -1,3 +1,5 @@
+"use strict";
+
 function debounce(func, delay) {
   let inDebounce
   return function () {

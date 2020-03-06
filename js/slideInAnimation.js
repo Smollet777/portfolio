@@ -1,3 +1,5 @@
+"use strict";
+
 function doAnimations() {
 
   let offset = (document.documentElement.scrollTop || document.body.scrollTop) + (document.documentElement.clientHeight || document.body.clientHeight),

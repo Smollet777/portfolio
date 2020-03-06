@@ -1,3 +1,4 @@
+"use strict";
 let query = document.querySelector(".typing")
 let text = query.innerHTML.split('');
 query.innerHTML = '';

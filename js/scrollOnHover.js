@@ -1,3 +1,5 @@
+"use strict";
+
 function scrollOnHover(targets, speed = 200) {
   targets.forEach(elem => {
 

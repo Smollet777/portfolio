@@ -1,3 +1,4 @@
+"use strict";
 const navLinks = document.querySelectorAll('#navbar a');
 const menu = document.querySelector('#navbar');
 
