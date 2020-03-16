@@ -23,6 +23,6 @@
     "gulp-if": "^2.0.2",
     "gulp-sass": "^4.0.2",
     "gulp-uglify": "^3.0.2",
-    "minimist": "^1.2.0"
+    "minimist": "^1.2.2"
   }
 }
