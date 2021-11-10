@@ -15,7 +15,7 @@ $mainWidth:90%;
   .welcome {
     padding: 12% 0 0;
 
-    h1 {
+    &__heading {
       font-size: 3rem;
     }
   }
@@ -46,7 +46,7 @@ $mainWidth:90%;
   .contacts {
     grid-template-columns: repeat(3, 1fr);
 
-    .contactMe {
+    &__heading {
       grid-area: 2/2/3/3;
       font-size: 2em;
       width: auto;
