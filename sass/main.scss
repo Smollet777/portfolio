@@ -1,3 +1,4 @@
+@use "sass:math";
 @import url('https://fonts.googleapis.com/css?family=Prosto+One|Roboto&subset=cyrillic');
 
 $color0: rgb(255, 255, 255);
@@ -97,7 +98,7 @@ li {
   .menu-button {
     font-weight: bolder;
     position: relative;
-    left: $navbarWidth/3;
+    left: math.div($navbarWidth, 3);
   }
 
   .section-link {
@@ -108,12 +109,12 @@ li {
 
   &_hidden {
     top: 5vh;
-    left: $navbarWidth/2;
+    left: math.div($navbarWidth, 2);
     height: $navbarHeight;
     transition: all .5s;
 
     .menu-button {
-      left: -$navbarWidth/3;
+      left: math.div(-$navbarWidth, 3);
     }
 
     .section-link {
