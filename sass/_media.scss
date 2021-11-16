@@ -12,13 +12,9 @@ $mainWidth:90%;
 
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
-  .welcome {
-    padding: 12% 0 0;
-
-    &__heading {
+  .welcome__heading {
       font-size: 3rem;
     }
-  }
 
   .navbar {
     left: 0;
@@ -28,7 +24,6 @@ $mainWidth:90%;
     }
 
     .section-link {
-      padding: 0 3em;
       display: inline;
 
       .button {
@@ -85,20 +80,6 @@ $mainWidth:90%;
 
         :last-child {
           order: -1;
-        }
-      }
-
-      &__desktop-view {
-
-        .image {
-          overflow: hidden;
-        }
-
-      }
-
-      &__mobile-view {
-        .image {
-          overflow: hidden;
         }
       }
 

@@ -48,11 +48,11 @@ li {
 }
 
 .main {
-  text-align: center;
-  margin: 0 auto;
   display: flex;
-  flex-flow: column wrap;
+  flex-flow: column nowrap;
   align-items: center;
+  overflow: hidden;
+  text-align: center;
 }
 
 .section {
@@ -63,7 +63,7 @@ li {
 .welcome {
   height: 100vh;
   color: $color3;
-  padding: 20% 0 0;
+  padding: 10% 0;
   box-shadow: none;
 
   &__heading {
@@ -133,7 +133,6 @@ li {
   background-color: $color3;
 
   &__item {
-    margin: .5em;
     padding: .5em;
     font-size: 1rem;
     letter-spacing: 2px;
@@ -176,7 +175,7 @@ li {
   position: relative;
   width: 100%;
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: row wrap-reverse;
   justify-content: space-around;
 
   &:nth-child(odd) {
@@ -271,8 +270,9 @@ li {
 }
 
 .footer {
+  text-align: center;
   width: 100%;
-  padding: 0;
+  padding: 10px;
   background-color: darken($color3, 10%);
   color: $color0;
 }
