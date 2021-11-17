@@ -56,6 +56,7 @@ li {
 }
 
 .section {
+  width: 100%;
   padding-top: $navbarHeight;
   box-shadow: 0 1px 5px $color2;
 }
@@ -124,7 +125,6 @@ li {
 }
 
 .contacts {
-  width: 100%;
   display: grid;
   grid-template-columns: 1fr;
   align-items: center;
@@ -163,6 +163,7 @@ li {
 .projects {
   display: flex;
   flex-flow: column wrap;
+  align-items: center;
   background-color: $color1;
 
   &__heading {
@@ -171,12 +172,12 @@ li {
 }
 
 .project {
-  padding: 30px;
   position: relative;
-  width: 100%;
   display: flex;
   flex-flow: row wrap-reverse;
-  justify-content: space-around;
+  justify-content: center;
+  width: 100%;
+  padding: 30px 0;
 
   &:nth-child(odd) {
     background-color: darken($color1, 4%);

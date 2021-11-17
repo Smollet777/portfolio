@@ -38,6 +38,7 @@ function styles() {
 function watch() {
   browserSync.init({
     server: "./",
+    host: "192.168.1.2", // can't detect proper IP now like it used to
     files: "",
     notify: false,
     index: "noCriticalCSS.html"
