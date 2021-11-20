@@ -11,6 +11,9 @@ $navbarWidth:100%;
 
 html {
   box-sizing: border-box;
+  scrollbar-width: thin;
+  scrollbar-gutter: stable;
+  scrollbar-color: darken($color0,10%) $color3;
 }
 
 *,
@@ -26,6 +29,28 @@ body {
   background: $color1;
   background: linear-gradient(to bottom, $color0, $color1);
   letter-spacing: 2px;
+}
+
+body::-webkit-scrollbar {
+  width: 10px;
+  background: darken($color3,10%);
+}
+
+body::-webkit-scrollbar-track {
+  background: darken($color3,10%);
+  border-radius: 100px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: $color0;
+  border-radius: 100px;
+  box-shadow: inset 0 1px 5px $color2;
+  transition: all .5s;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+  box-shadow: inset 0 1px 10px $color1;
+  transition: all .5s;
 }
 
 .h1 {
@@ -96,6 +121,10 @@ li {
   z-index: 99;
   transition: all .5s;
 
+  .menu-button,ul {
+    margin: .7rem 0;
+  }
+
   .menu-button {
     font-weight: bolder;
     position: relative;
@@ -103,7 +132,6 @@ li {
   }
 
   .section-link {
-    font-weight: bolder;
     padding: 1em;
     margin: 2em;
   }
@@ -111,7 +139,6 @@ li {
   &_hidden {
     top: 5vh;
     left: math.div($navbarWidth, 2);
-    height: $navbarHeight;
     transition: all .5s;
 
     .menu-button {
@@ -129,10 +156,12 @@ li {
   grid-template-columns: 1fr;
   align-items: center;
   justify-items: center;
+  padding-bottom: 2em;
   color: $color0;
   background-color: $color3;
 
   &__item {
+    margin: .7em 0;
     padding: .5em;
     font-size: 1rem;
     letter-spacing: 2px;
@@ -267,7 +296,6 @@ li {
   color: darken($color1, 45%);
   font-weight: bold;
   padding: 0.6em;
-  margin: 0.6em;
 }
 
 .footer {
@@ -284,7 +312,6 @@ li {
   font-weight: bold;
   border: 1px solid $color0;
   padding: 0.6em;
-  margin: 0.6em;
   box-shadow: 0 1px 5px $color2;
   transition: 0.7s ease-out;
 
