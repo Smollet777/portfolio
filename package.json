@@ -11,7 +11,7 @@
   "devDependencies": {
     "@babel/core": "^7.17.9",
     "@babel/preset-env": "^7.16.11",
-    "browser-sync": "^2.27.11",
+    "browser-sync": "^2.29.1",
     "critical": "^4.0.1",
     "del": "^6.0.0",
     "gulp": "^4.0.2",
